@@ -1,30 +1,26 @@
-Package: huskydown
-Title: An R Markdown thesis template for the University of Washington
-Version: 0.0.5
+Package: stormdown
+Title: Updated RMarkdown templates using bookdown
+Version: 0.0.1
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
-    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("cre", "aut")))
-Description: Using the bookdown package and LaTeX and Word thesis templates from
-    UW, this package aims to encourage reproducible research using
-    simple Markdown syntax while embedding all of the R code to produce plots
-    and analyses as well. Based on Chester Ismay's thesisdown.
-Maintainer: Ben Marwick <benmarwick@gmail.com>
+    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"),
+	person("Mark", "Newman", email = "mark@trinetteandmark.com", role = c("aut", "cre")))
+Description: Using the bookdown package and LaTeX dissertation templates from
+    Harrisburg University, this package aims to encourage reproducible research using
+    simple Markdown syntax while preserving a flexable analysis style. Based on Ben
+	Marwick's huskydown.
+Maintainer: Mark Newman <mark@trinetteandmark.com>
 Depends:
-    R (>= 3.4.4)
+    R (>= 3.4.0),
 Imports:
     bookdown,
-    rmarkdown,
-    knitr,
-    git2r,
-    tinytex,
     devtools,
-    dplyr,
-    ggplot2
+	kableExtra
 License: MIT + file LICENSE
+URL: https://github.com/markanewman/stormdown
+BugReports: https://github.com/markanewman/stormdown/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
 SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
-Suggests: 
-    testthat
+RoxygenNote: 7.1.0

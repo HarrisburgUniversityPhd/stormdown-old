@@ -1,0 +1,4 @@
+name:  HU-Dissertation
+description: >
+ Template for creating a PhD dissertation at HU using R Markdown based on the HU LaTeX template and the R bookdown package.
+

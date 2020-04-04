@@ -66,7 +66,7 @@ devtools::install_github("benmarwick/huskydown")
 
 File -> New File -> R Markdown... then choose 'From template', then choose 'UW-Thesis, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step. 
 
-![](uw_thesis_rmd.png)
+![](images/uw_thesis_rmd.png)
 
 Or if you're not using RStudio, run this line in your R console to create a new PhD thesis from the template:
 
