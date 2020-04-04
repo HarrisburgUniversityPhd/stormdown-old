@@ -570,11 +570,10 @@
 %
 \def\Title#1{\gdef\@Title{#1}}
 \def\Author#1{\gdef\@Author{#1}}
-\def\Year#1{\gdef\@Year{#1}}  \Year{\year}
 \def\Degree#1{\gdef\@Degree{#1}} \Degree{Doctor of Philosophy}
 \def\Program#1{\gdef\@Program{#1}} \Program{your program here}
 %
-\def\School#1{\gdef\@School{#1}} \School{University of Washington}
+\def\School#1{\gdef\@School{#1}} \School{Harrisburg University of Science and Technology}
 \def\GSchool#1{\gdef\@GSchool{#1}} \GSchool{Graduate School}
 \def\Degreetext#1{\gdef\@Degreetext{#1}}
   \Degreetext{A dissertation\\ submitted in partial fulfillment of the\\requirements for the degree of}
@@ -606,7 +605,7 @@
     \vspace{7pc}
     \begin{center}
       \par\vskip\z@ plus4fill\relax
-      \textcopyright \: Copyright \@Year
+      \textcopyright \: Copyright \the\year\
       \par
       \@Author
       \par\vskip\z@ plus2fill\relax
@@ -630,7 +629,7 @@
       \par\vskip\z@ plus2fill\relax
       \@School
       \par\vskip\z@ plus1fill\relax
-      \@Year
+      \the\year\
       \par\vskip\z@ plus4fill\relax
 
       % signers

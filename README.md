@@ -114,6 +114,11 @@ A good source for citation styles is https://github.com/citation-style-language/
 Store your figures and data here and reference them in your R Markdown files.
 See the [bookdown book](https://bookdown.org/yihui/bookdown/) for details on cross-referencing items using R Markdown.
 
+## (Re)build the package
+
+Instructions on how to rebuild the package for an updated distribution can be found [here](PackageTesting).
+This knoledge is not necessary of the avarage user.
+
 ## Related projects
 
 This project has drawn directly on code and ideas in the following:

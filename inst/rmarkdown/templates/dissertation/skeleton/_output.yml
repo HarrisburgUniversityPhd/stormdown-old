@@ -1,0 +1,8 @@
+stormdown::pdf_book: 
+    latex_engine: xelatex
+    toc: true
+    lot: true
+    lof: true
+    keep_tex: false
+    pandoc_args: --top-level-division=chapter
+    template: _template.tex

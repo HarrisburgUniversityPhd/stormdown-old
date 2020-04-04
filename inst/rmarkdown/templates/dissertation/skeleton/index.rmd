@@ -1,8 +1,7 @@
 ---
 # HU dissertation fields
-title: "My dissertation title - edit in index.Rmd"
+title: "My dissertation title"
 author: "My Name"
-year: "`r Sys.Date()`"
 program: "My Department"
 chair: "Name of my committee chair"
 chairtitle: "Title of my chair"
@@ -18,17 +17,11 @@ dedication: |
   "My dedication"
 # End of HU dissertation fields
 knit: 'bookdown::render_book'
-output: 
-  stormdown::pdf_book: 
-    latex_engine: xelatex
 bibliography: _references.bib
 link-citations: yes
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 url: 'https\://github.com/user/repo'
 github-repo: user/repo
-# Download your specific csl file and refer to it in the line above.
-lot: true
-lof: true
 ---
 
 <!--
