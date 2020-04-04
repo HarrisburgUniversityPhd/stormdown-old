@@ -24,7 +24,7 @@
 % 2015/03/03 - last change before forking from original author
 %
 
-\ProvidesClass{huthesis}[2020/04/03]
+\ProvidesClass{_huthesis}[2020/04/03]
 \NeedsTeXFormat{LaTeX2e}
 
 %
