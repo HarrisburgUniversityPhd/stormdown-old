@@ -3,7 +3,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Mathematics and Science {#math-sci}
+# Method and Materials {#method-and-materials}
 
 ## Math
 

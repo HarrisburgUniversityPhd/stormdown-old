@@ -1,6 +1,6 @@
 ^docs$
 ^draft$
-^images$
+^guidence$
 ^pkgdown$
 ^\.gitattributes$
 ^\.gitignore$
@@ -8,4 +8,3 @@
 ^\.travis\.yml$
 ^_pkgdown\.yml$
 ^Dockerfile$
-^PackageTesting\.md$

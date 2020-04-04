@@ -7,12 +7,9 @@ editor_options:
 if(!require(devtools)) { install.packages("devtools"); library(devtools) }
 if(!require(dplyr)) { install.packages("dplyr"); library(dplyr) }
 if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
-if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
-
-flights <- read.csv("data/flights.csv")
 ```
 
-# Tables, Graphics, References, and Labels {#ref-labels}
+# Results {#results}
 
 ## Tables {#tables}
 
@@ -78,8 +75,14 @@ In the **R** chunk below, we will load in a picture stored as `hu-100px.png` in 
 We then give it the caption of "HU logo", the label of "hulogo", and specify that this is a figure.
 Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
 
+<!--
+In general, I recomend pre generating all your figures and then simply rendering them using ``knitr::include_graphics()` as demonstrated in the `\@ref(fig:hulogo)` figure.
+This is because `ggplot` can sometimes take a while to render out (see `\@ref(fig:delaysboxplot)`) when dealing with a large dataset.
+Do all the heavy lifting first, then the Kniting should be as fast as posible.
+-->
+
 ```{r hulogo, fig.cap="HU logo"}
-include_graphics(path = "figure/hu-100px.png")
+knitr::include_graphics(path = "figure/hu-100px.png")
 ```
 
 Here is a reference to the HU logo: Figure \@ref(fig:hulogo).
@@ -98,6 +101,7 @@ We will next explore a bar graph with the mean flight departure delays by airlin
 Note also the use of the `scale` parameter which is discussed on the next page.
 
 ```{r delaysboxplot, warnings=FALSE, messages=FALSE, fig.cap="Mean Delays by Airline", fig.width=6}
+flights <- read.csv("data/flights.csv")
 flights %>% group_by(carrier) %>%
   summarize(mean_dep_delay = mean(dep_delay)) %>%
   ggplot(aes(x = carrier, y = mean_dep_delay)) +
@@ -114,7 +118,7 @@ Next, we will explore the use of the `out.extra` chunk option, which can be used
 Here we use the mathematical graph stored in the "subdivision.pdf" file.
 
 ```{r subd, results="asis", echo=FALSE, fig.cap="Subdiv. graph", out.extra="scale=0.75"}
-include_graphics("figure/subdivision.pdf")
+knitr::include_graphics("figure/subdivision.pdf")
 ```
 
 Here is a reference to this image: Figure \@ref(fig:subd).
@@ -126,14 +130,15 @@ Lastly, we will explore how to rotate and enlarge figures using the `out.extra` 
 (Currently this only works in the PDF version of the book.)
 
 ```{r subd2, results="asis", echo=FALSE, out.extra="angle=180, scale=1.1", fig.cap="A Larger Figure, Flipped Upside Down"}
-include_graphics("figure/subdivision.pdf")
+knitr::include_graphics("figure/subdivision.pdf")
 ```
 
 As another example, here is a reference: Figure \@ref(fig:subd2).  
 
 ## Footnotes and Endnotes
 
-You might want to footnote something. ^[footnote text] The footnote will be in a smaller font and placed appropriately.
+You might want to footnote something.
+^[footnote text] The footnote will be in a smaller font and placed appropriately.
 Endnotes work in much the same way. 
 
 ## Cross-referencing chapters and sections 
@@ -162,11 +167,11 @@ For example, earlier in this chapter we have a section on tables and in the Rmd 
 We can cross-reference that in the text like this 'as discussed in the section on `[tables](#tables)`' which will appear as 'as discussed in the above section on [tables](#tables)'
 
 To cross-reference a section in a different chapter we can use the ID label from that section directly.
-For example, we can write in our Rmd document `as discussed in the section on [R code chunks](#r-chunks) in Chapter \@ref(rmd-basics)` which will appear as 'as discussed in the section on [R code chunks](#r-chunks) in Chapter \@ref(rmd-basics)'. 
+For example, we can write in our Rmd document `as discussed in the section on [R code chunks](#r-chunks) in Chapter \@ref(literature-review)` which will appear as 'as discussed in the section on [R code chunks](#r-chunks) in Chapter \@ref(literature-review)'. 
 
 If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document.
-For example, to refer to a section in our first chapter, we can write in the Rmd document: `as discussed in section \@ref(r-chunks) in Chapter \@ref(rmd-basics)`.
-This will appear with section and chapter numbers like so: as 'as discussed in section \@ref(r-chunks) in Chapter \@ref(rmd-basics)'. 
+For example, to refer to a section in our first chapter, we can write in the Rmd document: `as discussed in section \@ref(r-chunks) in Chapter \@ref(literature-review)`.
+This will appear with section and chapter numbers like so: as 'as discussed in section \@ref(r-chunks) in Chapter \@ref(literature-review)'. 
 
 ## Bibliographies
 

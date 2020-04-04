@@ -3,12 +3,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-`r '\\appendix'`
-
-<!--
-If you feel it necessary to include an appendix, it goes here.
--->
-
 # The First Appendix
 
 This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
@@ -22,5 +16,3 @@ This first appendix includes all of the R chunks of code that were hidden throug
 
 ```{r ref.label='include_packages_2', results='hide', echo = TRUE}
 ```
-
-# The Second Appendix, for Fun
