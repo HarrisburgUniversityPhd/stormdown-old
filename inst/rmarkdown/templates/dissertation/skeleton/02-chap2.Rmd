@@ -1,12 +1,5 @@
 # Mathematics and Science {#math-sci}
 
-<!-- Required to number equations in HTML files -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
-
 ## Math
 
 \TeX\ is the best way to typeset mathematics.
@@ -16,8 +9,9 @@ One nice feature of _R Markdown_ is its ability to read LaTeX code directly.
 If you are doing a thesis that will involve lots of math, you will want to read the following section which has been commented out.
 If you're not going to use math, skip over or delete this next commented section.
 
-$$\sum_{j=1}^n (\delta\theta_j)^2 \leq {{\beta_i^2}\over{\delta_i^2 + \rho_i^2}}
-\left[ 2\rho_i^2 + {\delta_i^2\beta_i^2\over{\delta_i^2 + \rho_i^2}} \right] \equiv \omega_i^2
+$$
+\sum_{j=1}^n (\delta\theta_j)^2 \leq \frac{\beta_i^2}{\delta_i^2 + \rho_i^2}
+\left[ 2\rho_i^2 + \frac{\delta_i^2\beta_i^2}{\delta_i^2 + \rho_i^2} \right] \equiv \omega_i^2
 $$
 
 From Informational Dynamics, we have the following (Dave Braden):

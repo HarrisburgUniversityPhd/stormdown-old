@@ -70,14 +70,14 @@ If you need it to appear in the list of figures or tables, it should be placed i
 -->
 
 In the **R** chunk below, we will load in a picture stored as `hu-100px.png` in our main directory.
-We then give it the caption of "UW logo", the label of "uwlogo", and specify that this is a figure.
+We then give it the caption of "HU logo", the label of "hulogo", and specify that this is a figure.
 Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
 
-```{r uwlogo, fig.cap="UW logo"}
+```{r hulogo, fig.cap="HU logo"}
 include_graphics(path = "figure/hu-100px.png")
 ```
 
-Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).
+Here is a reference to the HU logo: Figure \@ref(fig:hulogo).
 Note the use of the `fig:` code here.
 By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.
 We can also specify the caption for the figure via the R chunk option `fig.cap`.

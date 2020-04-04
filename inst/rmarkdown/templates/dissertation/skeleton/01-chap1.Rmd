@@ -93,7 +93,8 @@ plot(pressure)
 ```
 
 Note that the `echo=FALSE` parameter was added to the code chunk to prevent printing of the **R** code that generated the plot.
-There are plenty of other ways to add chunk options.  More information is available at <http://yihui.name/knitr/options/>.  
+There are plenty of other ways to add chunk options.
+More information is available at <http://yihui.name/knitr/options/>.  
 
 Another useful chunk option is the setting of `cache=TRUE` as you see here.
 If document rendering becomes time consuming due to long computations or plots that are expensive to generate you can use knitr caching to improve performance.
