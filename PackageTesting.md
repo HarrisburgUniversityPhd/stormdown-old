@@ -58,5 +58,5 @@ dir.create('draft')
 ```{r}
 rmarkdown::draft('draft/t1', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
 setwd('d:/repos/stormdown/draft/t1')
-bookdown::render_book('index.rmd', stormdown::dissertation_pdf(latex_engine = 'xelatex'))
+bookdown::render_book('index.rmd')
 ```

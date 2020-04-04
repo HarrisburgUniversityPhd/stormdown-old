@@ -1,5 +1,6 @@
 %  ========================================================================
-%  Copyright (c) 1995-2014 The University of Washington
+%  Copyright (c) 1995-2015 The University of Washington
+%  Copyright (c) 2020 Harrisburg University of Science and Technology
 %
 %  Licensed under the Apache License, Version 2.0 (the "License");
 %  you may not use this file except in compliance with the License.
@@ -14,70 +15,16 @@
 %  limitations under the License.
 %  ========================================================================
 %
-%
-% University of Washington Thesis class
-% by Jim Fox
-% fox@washington.edu
-%
-%    For the most recent edition of this class file see:
-%         http://staff.washington.edu/fox/tex/
-%    or
-%         https://github.com/UWIT-IAM/UWThesis.git
-%
+% Copyright (c) 1995 Jim Fox fox@washington.edu University of Washington
+% Copyright (c) 2020 Mark Newman mark@trinetteandmark.com Harrisburg University of Science and Technology
 %
 % Version history
 %
-% 9.01,03/03/15, rename singlespace to uwsinglespace so no collision with setspace style
-% 9.00,11/13/14, modify for proquest style.  Adjust sample thesis appropriately
-% 8.04,03/06/14, return multi-page abstract to two sided
-% 8.03,06/19/12, fix textofChair for co-chairs
-% 8.02,04/02/12, Slight mods to fixup title and other fornt pages
-% 8.01,03/21/12, Slight modification to title pages
-% 8.00,02/03/12, Revise for electronic submission.  Revised title, no signature nor quoteslip
-% 7.00,06/27/11, Fix output page bug, add copyright page
-% 6.14,07/24/08, Remove large font from abstract title
-% 6.14,04/15/08, Re-Fix first page bottom margin; raise quote slip
-% 6.13,03/31/08, Fix first page bottom margin;
-% 6.12,03/21/07, Better handling of label inside footnote with chapternotes
-% 6.11,08/02/06, Bold "abstract", "Page" heading on toc
-% 6.10,10/25/05, Fix co-chair lines
-% 6.9, 10/25/05, Several small changes for 2005 style guide
-% 6.8, 07/26/05, Add some single-spacing in prelim pages
-% 6.7, 06/29/05, Remove "by" from abstract page
-% 6.6, 06/08/05, Change signature page baseline to 1.0
-% 6.5, 03/10/05, Change bibliography baseline to 1.0
-% 6.4, 03/09/05, Quote slip copy to "Proquest Information and Learning"
-% 6.3, 09/22/04, Add column titles to lof and lot
-% 6.2, 07/23/04, Lowercase 'doctoral' in quote slip
-% 6.1, 07/08/04, Allow option 'natbib' to load natbib package correctly
-% 6.0, 07/14/03, Change names: thesis.xxx -> uwthesis.xxx
-% 5.8, 06/12/03, Minor changes to the endnotes pagenation
-% 5.7, 08/14/00, Minor changes to the quote slip
-% 5.6, 06/19/00, 'Doctorial' -> 'Doctoral'
-% 5.5, 05/30/00, New text for quote slips (and 'doctorial' -> 'doctoral')
-% 5.4, 10/29/99, Add \xtrafullpage for oneside fullpage figures
-% 5.3, 08/09/99, Correct spelling errors in quote slips
-% 5.2, 07/20/99, Allow 10pt, 11pt, and 12pt class options
-% 5.1, 02/08/99, Add \thesissignaturepage
-% 5.0, 01/05/99, Modify for revised uw grad school guidelines
-%
-% 4.8, 10/22/98, Allow multi-page abstract
-%                Allow co-chairs
-%                Fix single-sided facing pages (for new latex)
-% 4.7, 8/19/98,  Set caption text back to normal size
-% 4.6, 3/11/98,  Add default-text quoteslip macros
-% 4.5, 7/14/97,  fix \@makefntext to work in math mode
-% 4.4, 5/13/97,  change margin calculations (allows non-letter paper)
-%                minor reformatting of abstract
-%                provide single-spaced captions, footnotes, and quotes
-% 4.3, 2/13/97,  allow \\ in text (bug fix)
-% 4.2, 8/12/96,  added \@normalsize for setspace.sty (and others?)
-% 4.1, 11/6/95,  no page numbers on chapter start for oneside printing
-%
-% Documentation is in the companion document (uwthesis.tex)
+% 2020/04/03 - adjust file to me more HU centeric
+% 2015/03/03 - last change before forking from original author
 %
 
-\ProvidesClass{uwthesis}[2015/03/03]
+\ProvidesClass{huthesis}[2020/04/03]
 \NeedsTeXFormat{LaTeX2e}
 
 %
@@ -912,16 +859,16 @@
 
 
 \RequirePackage{mathspec}
-\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
-\setmathrm{EB Garamond}
+\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{Garamond}
+\setmathrm{Garamond}
 
 
 \defaultfontfeatures{Mapping=tex-text}
-\newfontfamily{\smallcaps}[RawFeature={c2sc,scmp}]{EB Garamond}
+\newfontfamily{\smallcaps}[RawFeature={c2sc,scmp}]{Garamond}
 \defaultfontfeatures{Ligatures=TeX}
-%% \setmainfont[Numbers=OldStyle, Contextuals=Alternate, Ligatures={Common, Rare, Historical}]{EB Garamond}
-\setmainfont[Numbers=OldStyle, Contextuals=Alternate, Ligatures={Common}]{EB Garamond}
-\setsansfont[Scale=MatchLowercase, BoldFont={Lato Bold}]{Lato Regular}
-\setmonofont[Scale=MatchLowercase]{Source Code Pro}
+%% \setmainfont[Numbers=OldStyle, Contextuals=Alternate, Ligatures={Common, Rare, Historical}]{Garamond}
+\setmainfont[Numbers=OldStyle, Contextuals=Alternate, Ligatures={Common}]{Garamond}
+\setsansfont[Scale=MatchLowercase, BoldFont={Comfortaa Bold}]{Comfortaa Regular}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
 
 

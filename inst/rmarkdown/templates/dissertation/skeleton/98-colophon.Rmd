@@ -1,6 +1,6 @@
 # Colophon {-}
 
-This document is set in [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/).
+This document is set in [Garamond](https://tug.org/FontCatalogue/garamond), [Comfortaa](https://tug.org/FontCatalogue/comfortaa), [Inconsolata](https://tug.org/FontCatalogue/inconsolata).
 The body text is set at 11pt with $\familydefault$. 
 
 It was written in R Markdown and $\LaTeX$, and rendered into PDF using [stormdown](https://github.com/markanewman/stormdown) and [bookdown](https://github.com/rstudio/bookdown). 

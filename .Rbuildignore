@@ -1,4 +1,5 @@
 ^docs$
+^draft$
 ^images$
 ^pkgdown$
 ^\.gitattributes$
