@@ -9,11 +9,11 @@ signature2: "person 2"
 signature3: "person 3"
 signature4: "person 4"
 abstract: |
-  "Here is my abstract"
+  `r paste(readLines("_01-abstract.rmd"), collapse = '\n  ')`
 acknowledgments: |
-  "My acknowledgments"
+  `r paste(readLines("_02-acknowledgments.rmd"), collapse = '\n  ')`
 dedication: |
-  "My dedication"
+  `r paste(readLines("_03-dedication.rmd"), collapse = '\n  ')`
 knit: 'bookdown::render_book'
 bibliography: _references.bib
 link-citations: yes
@@ -26,4 +26,8 @@ github-repo: user/repo
 Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.
 Be careful with spacing in this header!
 If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+-->
+
+<!--
+Due to the way R Markdown processed `RMD` files, it is important that all files end with a single blank line
 -->
