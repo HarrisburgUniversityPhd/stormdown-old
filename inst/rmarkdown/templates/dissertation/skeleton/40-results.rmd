@@ -95,7 +95,7 @@ We can also specify the caption for the figure via the R chunk option `fig.cap`.
 <!-- starts a new page and stops trying to place floats such as tables and figures -->
 
 Below we will investigate how to save the output of an **R** plot and label it in a way similar to that done above.
-Recall the `flights` dataset from Chapter \@ref(rmd-basics).
+Recall the `flights` dataset from Chapter \@ref(literature-review).
 (Note that we've shown a different way to reference a section or chapter here.)
 We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014.
 Note also the use of the `scale` parameter which is discussed on the next page.
@@ -153,9 +153,10 @@ If you have any kind of punctuation in your header, such as a colon (:), it will
 Then in your text you can reference chapter one in your Rmd file like this: 'as discussed in Chapter `\@ref(chapter-1)`', which will print as 'as discussed in Chapter 1'
 
 We strongly recommend that you to manually assign ID labels to your chapter header to make it easy to cross-reference.
-For example, at the top of the Rmd file for this chapter, you can see:
 
-`# Tables, Graphics, References, and Labels {#ref-labels}`
+## Tables, Graphics, References, and Labels {#ref-labels}
+
+`## Tables, Graphics, References, and Labels {#ref-labels}`
 
 The `{#ref-labels}` part of this header is the ID label.
 It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header.
