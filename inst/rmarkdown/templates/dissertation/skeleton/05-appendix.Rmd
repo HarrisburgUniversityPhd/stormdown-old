@@ -1,11 +1,13 @@
-`r if(knitr:::is_latex_output()) '\\appendix'`
+---
+editor_options: 
+  chunk_output_type: console
+---
 
-`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
+`r '\\appendix'`
 
 <!--
 If you feel it necessary to include an appendix, it goes here.
 -->
-
 
 # The First Appendix
 

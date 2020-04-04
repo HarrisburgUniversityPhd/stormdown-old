@@ -1,3 +1,8 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
 # Colophon {-}
 
 This document is set in [EB Garamond](https://tug.org/FontCatalogue/ebgaramond), [Lato](https://tug.org/FontCatalogue/lato), [Source Code Pro](https://tug.org/FontCatalogue/sourcecodepro).
