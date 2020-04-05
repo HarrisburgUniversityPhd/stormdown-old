@@ -1,0 +1,8 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+# Scholary Work C {#c-appendix}
+
+This third appendix includes all of the extra stuff from your third paper.

@@ -1,0 +1,33 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+<!--
+The 'a-' in {#a-introduction} is a necessary part of the dissertation _portfolio_.
+R does not allow duplicate chunk names, and given that each of your indivual works will have the same 5 sections, disimbiguation is necessary.
+-->
+
+<!--
+Notice the ##.
+In a disertation portfolio, the intro, related works, ... start as `##`, not `#`.
+This allows them to flow better in the ToC
+-->
+
+## Introduction {#a-introduction}
+
+<!--
+Please remember that you are not copy/paste-ing the whole stand alone into your portfolio.
+It should be focused only on the parts that fit together that make up your unique contribution.
+This means that each portfolio section will be a summary from the origional work then explaining how it should be thought of as a whole with your other works.
+-->
+
+Welcome to the _R Markdown_ dissertation template.
+This template is based on (and in many places copied directly from) the HU LaTeX template, but hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before.
+Using _R Markdown_ will also allow you to easily keep track of your analyses in **R** chunks of code, with the resulting plots and output included as well.
+The hope is this _R Markdown_ template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
+
+Hopefully, you won't have much of a learning period to go through and you will reap the benefits of a nicely formatted dissertation.
+The use of LaTeX in combination with _Markdown_ is more consistent than the output of a word processor, much less prone to corruption or crashing, and the resulting file is smaller than a Word file.
+While you may have never had problems using Word in the past, your dissertation is likely going to be at least twice as large and complex as anything you've written before, taxing Word's capabilities.
+After working with _Markdown_ and **R** together for a few weeks, we are confident this will be your reporting style of choice going forward.

@@ -1,0 +1,26 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+# Colophon {-}
+
+This document is set in [EB Garamond](https://tug.org/FontCatalogue/ebgaramond), [Lato](https://tug.org/FontCatalogue/lato), [Source Code Pro](https://tug.org/FontCatalogue/sourcecodepro).
+The body text is set at 11pt with $\familydefault$. 
+
+It was written in R Markdown and $\LaTeX$, and rendered into PDF using [stormdown](https://github.com/markanewman/stormdown) and [bookdown](https://github.com/rstudio/bookdown). 
+
+This document was typeset using the XeTeX typesetting system and the [Harrisburg University Doctoral Studies class](https://harrisburgu.edu/andp-program-main/andp-core-req/) class created by [Rand Ford](https://harrisburgu.edu/andp-program-main/andp-fulltime-faculty/).
+Under the hood, the [Harrisburg University LaTeX template](https://github.com/markanewman/stormdown) is used to ensure that documents conform precisely to submission standards.
+Other elements of the document formatting source code have been taken from the [University of Washington Thesis LaTeX template](https://github.com/UWIT-IAM/UWThesis), the [Latex, Knitr, and RMarkdown templates for UC Berkeley's graduate thesis](https://github.com/stevenpollack/ucbthesis), and the [Dissertate: a LaTeX dissertation template to support the production and typesetting of a PhD dissertation at Harvard, Princeton, and NYU](https://github.com/suchow/Dissertate)
+
+The source files for this dissertation, along with all the data files, have been organised into a reproducable which is available at https://github.com/user/repo.
+A hard copy of the dissertation can be found in the Harrisburg University of Science and Technology library.
+
+This version of the dissertation was generated on `r Sys.time()`.
+
+The computational environment that was used to generate this version is as follows:
+
+```{r echo = FALSE}
+devtools::session_info()
+```

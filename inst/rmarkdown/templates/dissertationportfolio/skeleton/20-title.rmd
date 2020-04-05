@@ -1,0 +1,6 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+# Scholary Work A {#a-title}

@@ -1,0 +1,33 @@
+---
+title: "My dissertation title"
+author: "My Name"
+program: "My Department"
+chair: "Name of my committee chair"
+chairtitle: "Title of my chair"
+signature1: "person 1"
+signature2: "person 2"
+signature3: "person 3"
+signature4: "person 4"
+abstract: |
+  `r paste(readLines("_01-abstract.rmd"), collapse = '\n  ')`
+acknowledgments: |
+  `r paste(readLines("_02-acknowledgments.rmd"), collapse = '\n  ')`
+dedication: |
+  `r paste(readLines("_03-dedication.rmd"), collapse = '\n  ')`
+knit: 'bookdown::render_book'
+bibliography: _references.bib
+link-citations: yes
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+url: 'https\://github.com/user/repo'
+github-repo: user/repo
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.
+Be careful with spacing in this header!
+If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+-->
+
+<!--
+Due to the way R Markdown processed `RMD` files, it is important that all files end with a single blank line
+-->

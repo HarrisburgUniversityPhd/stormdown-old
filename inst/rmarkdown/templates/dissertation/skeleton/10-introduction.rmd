@@ -38,7 +38,7 @@ You'll see more on this later.
 Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about the final appearance of their document should use _R Markdown_.
 Of particular use should be anyone in the sciences, but the user-friendly nature of _Markdown_ and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should make it of great benefit to nearly anyone writing a dissertation project.
 
-The rest of the paper is outlined as follows.
+The rest of the dissertation is outlined as follows.
 Related works are discussed in Chapter \@ref(literature-review).
 Chapter \@ref(method-and-materials) provides materials and methods of study.
 Chapter \@ref(results) presents results of the statistical analyses.

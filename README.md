@@ -2,12 +2,14 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/markanewman/stormdown.svg?branch=master)](https://travis-ci.org/markanewman/stormdown) 
 
-This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted according to the requirements of Harrisburg University.
+This project provides two templates for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted according to the requirements of Harrisburg University.
 
-Unlike similar versions in [huskydown](https://github.com/benmarwick/huskydown) and [thesisdown](https://github.com/ismayc/thesisdown), the focus of this project lies heavily on the PDF version, since this is the only format that the HU administration accepts.
+* A **Dissertation** in the traditional APA style.
+* A **Dissertation Portfolio** containing several related works that make up a cohesive whole each presented in APA style.
+
+Unlike similar versions in [huskydown](https://github.com/benmarwick/huskydown) and [thesisdown](https://github.com/ismayc/thesisdown), the focus of this project lies soly on the PDF version, since this is the only format that the HU administration accepts.
 The PDF version is fully functional.
 The word, gitbook and epub versions were removed as dead code.
-I might develop them at a later time if needed/wanted.
 
 If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in stormdown PDF template (which you can create by following the simple instructions below) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
 

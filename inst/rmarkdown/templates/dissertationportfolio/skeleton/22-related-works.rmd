@@ -1,0 +1,34 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+## Related Works {#a-related-works}
+
+### R chunks {#a-r-chunks}
+
+When you click the **Knit** button above a document will be generated that includes both content as well as the output of any embedded **R** code chunks within the document.
+You can embed an **R** code chunk like this (`cars` is a built-in **R** dataset):
+
+```{r a-cars}
+summary(cars)
+```
+
+### Inline code
+
+If you'd like to put the results of your analysis directly into your discussion, add inline code like this:
+
+> The `cos` of $2 \pi$ is `r cos(2*pi)`. 
+
+Another example would be the direct calculation of the standard deviation:
+
+> The standard deviation of `speed` in `cars` is `r sd(cars$speed)`.
+
+One last neat feature is the use of the `ifelse` conditional statement which can be used to output text depending on the result of an **R** calculation:
+
+> `r ifelse(sd(cars$speed) < 6, "The standard deviation is less than 6.", "The standard deviation is equal to or greater than 6.")`
+
+Note the use of `>` here, which signifies a quotation environment that will be indented.
+
+As you see with `$2 \pi$` above, mathematics can be added by surrounding the mathematical text with dollar signs.
+More examples of this are in [Mathematics and Science] if you uncomment the code in [Math].  

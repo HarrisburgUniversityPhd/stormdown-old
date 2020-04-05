@@ -23,40 +23,56 @@ choco install rtools -y
 choco install pandoc -y
 ```
 02. Clone the [repo](https://github.com/markanewman/stormdown) from [GitHub](https://github.com) 
-03. Open up [R Studio][rstudio](https://www.rstudio.com/) and switch to the project folder.
+03. Open up [R Studio][rstudio](https://www.rstudio.com/)
+04. Install the devolopment packages
+```{r}
+if(!require(devtools)) { install.packages('devtools') }
+if(!require(roxygen2)) { install.packages('roxygen2') }
+if(!require(pkgdown)) { install.packages('pkgdown') }
+rstudioapi::restartSession()
+```
+05. Switch to the package folder.
     The cloned location can be anything you want.
 	I used `D:/repos/stormdown` so you may need to change the path in some of the following steps.
 ```{r}
-setwd('D:/repos/stormdown')
+package_dir = 'D:/repos/stormdown'
+setwd(package_dir)
 ```
-04. Install the devolopment packages
-```{r}
-install.packages('devtools')
-install.packages('roxygen2')
-install.packages('pkgdown')
-```
-05. Clean then compile the project
+06. Clean then compile the package
 ```{r}
 unlink(c("./docs/*", "./man/*", "./NAMESPACE"), recursive = T)
 devtools::document()
 pkgdown::build_site()
 devtools::check()
 ```
-06. (re)Install the templates
+07. (re)Install the templates
 ```{r}
 lib <- library()
-if('stormdown' %in% lib$results[,'Package']) { remove.packages('stormdown'); rstudioapi::restartSession() }
-devtools::install_local('D:/repos/stormdown', dep = T, upgrade = 'never')
+if('stormdown' %in% lib$results[,'Package']) { remove.packages('stormdown') }
+devtools::install_local(package_dir, dep = T, upgrade = 'never')
 rstudioapi::restartSession()
 ```
-07. Move to a drafting directory
+08. Move to a drafting directory
 ```{r}
 if (dir.exists('draft')) unlink('draft', recursive = T)
 dir.create('draft')
 ```
-08. Generate and compile the Dissertation template
+09. Generate and compile the Dissertation template
 ```{r}
+setwd(package_dir)
 rmarkdown::draft('draft/t1', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
-setwd('d:/repos/stormdown/draft/t1')
+setwd(paste0(package_dir, '/draft/t1'))
 bookdown::render_book('index.rmd')
+```
+10. Generate and compile the Dissertation Portfolio template
+```{r}
+setwd(package_dir)
+rmarkdown::draft('draft/t2', template = 'dissertationportfolio', package = 'stormdown', create_dir = T, edit = F)
+setwd(paste0(package_dir, '/draft/t2'))
+bookdown::render_book('index.rmd')
+```
+11. Cleanup
+```{r}
+rm(list=ls())
+rstudioapi::restartSession()
 ```

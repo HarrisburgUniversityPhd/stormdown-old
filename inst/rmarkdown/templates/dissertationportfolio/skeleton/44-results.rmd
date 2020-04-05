@@ -1,0 +1,85 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+if(!require(devtools)) { install.packages("devtools"); library(devtools) }
+if(!require(dplyr)) { install.packages("dplyr"); library(dplyr) }
+if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
+```
+
+## Results {#c-results}
+
+### Footnotes and Endnotes
+
+You might want to footnote something.
+^[footnote text] The footnote will be in a smaller font and placed appropriately.
+Endnotes work in much the same way. 
+
+### Cross-referencing chapters and sections 
+
+The [bookdown documentation](https://bookdown.org/yihui/bookdown/cross-references.html) is an excellent source for learning how to cross-reference in a bookdown project such as a stormdown document.
+Here we only cover the most common uses for a typical dissertation.
+If you want something more complex or fancy, please refer to the bookdown documentation and seek help from the developers of that package. 
+
+By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., `# Chapter 1` will have an auto-generated ID `chapter-1`.
+Note that the ID label is all lower case, and has no spaces.
+If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label.
+Then in your text you can reference chapter one in your Rmd file like this: 'as discussed in Chapter `\@ref(chapter-1)`', which will print as 'as discussed in Chapter 1'
+
+We strongly recommend that you to manually assign ID labels to your chapter header to make it easy to cross-reference.
+
+### Tables, Graphics, References, and Labels {#ref-labels}
+
+`### Tables, Graphics, References, and Labels {#ref-labels}`
+
+The `{#ref-labels}` part of this header is the ID label.
+It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header.
+We can use this custom ID label in our Rmd document like this: 'as discussed in Chapter `\@ref(ref-labels)`', which will print as 'as discussed in Chapter \@ref(ref-labels)'.
+If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: `see [my chapter about labels](#ref-labels) for more details` which will appear as 'see [my chapter about labels](#ref-labels) for more details'
+
+To cross-reference a specific section in the same chapter, we recommend adding a custom ID label to the section header, and using that to cross-reference.
+For example, earlier in this chapter we have a section on tables and in the Rmd file we see `## Tables {#tables}`.
+We can cross-reference that in the text like this 'as discussed in the section on `[tables](#tables)`' which will appear as 'as discussed in the above section on [tables](#tables)'
+
+To cross-reference a section in a different chapter we can use the ID label from that section directly.
+For example, we can write in our Rmd document `as discussed in the section on [R code chunks](#a-r-chunks) in Chapter \@ref(literature-review)` which will appear as 'as discussed in the section on [R code chunks](#a-r-chunks) in Chapter \@ref(literature-review)'. 
+
+If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document.
+For example, to refer to a section in our first chapter, we can write in the Rmd document: `as discussed in section \@ref(a-r-chunks) in Chapter \@ref(literature-review)`.
+This will appear with section and chapter numbers like so: as 'as discussed in section \@ref(a-r-chunks) in Chapter \@ref(literature-review)'. 
+
+### Bibliographies
+
+Of course you will need to cite things, and you will probably accumulate an armful of sources.
+There are a variety of tools available for creating a bibliography database (stored with the .bib extension).
+In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero.
+Some Zotero documentation is at <http://libguides.reed.edu/citation/zotero>.
+In addition, a tutorial is available from Middlebury College at <http://sites.middlebury.edu/zoteromiddlebury/>.
+
+_R Markdown_ uses _pandoc_ (<http://pandoc.org/>) to build its bibliographies.
+One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires.
+To cite references in your dissertation (after creating your bibliography database), place the reference name inside square brackets and precede it by the "at" symbol.
+For example, here's a reference to a book about worrying:  [@molina1994].
+This `molina1994` entry appears in a file called `_refrences.bib`.
+This bibliography database file was created by a program called BibTeX.
+You can call this file something else if you like (look at the YAML header in the index.Rmd file) and, by default, is to placed in the root.  
+
+For more information about BibTeX and bibliographies, see (<http://web.reed.edu/cis/help/latex/index.html>)^[@reedweb2007].
+There are three pages on this topic: _bibtex_ (which talks about using BibTeX, at <http://web.reed.edu/cis/help/latex/bibtex.html>), _bibtexstyles_ (about how to find and use the bibliography style that best suits your needs, at <http://web.reed.edu/cis/help/latex/bibtexstyles.html>) and _bibman_ (which covers how to make and maintain a bibliography by hand, without BibTeX, at <http://web.reed.edu/cis/help/latex/bibman.html>).
+The last page will not be useful unless you have only a few sources.
+
+**Tips for Bibliographies**
+
+- Like with dissertation formatting, the sooner you start compiling your bibliography for something as large as dissertation, the better. 
+- The cite key (a citation's label) needs to be unique from the other entries.
+- When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
+- Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
+- To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
+
+### Anything else?
+
+If you'd like to see examples of other things in this template, please [contact us](https://github.com/markanewman/stormdown/issues/new) (email <mark@trinetteandmark.com>) with your suggestions.
+We love to see people using _R Markdown_ for their issertations, and are happy to help.
+
