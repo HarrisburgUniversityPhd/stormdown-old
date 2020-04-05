@@ -69,10 +69,11 @@ dir.create(draft_dir)
 rmarkdown::draft(draft_t1_dir, template = 'dissertation', package = package, create_dir = T, edit = F)
 rmarkdown::draft(draft_t2_dir, template = 'dissertationportfolio', package = package, create_dir = T, edit = F)
 ```
-10. Compile the templates
+10. Compile the templates.
+    Make sure to use a new enviroment because this more closely resembles the end user clicking the knit button
 ```{r}
-setwd(draft_t1_dir); bookdown::render_book('index.rmd')
-setwd(draft_t2_dir); bookdown::render_book('index.rmd')
+setwd(draft_t1_dir); env_t1 <- new.env(); bookdown::render_book('index.rmd', envir = env_t1)
+setwd(draft_t2_dir); env_t2 <- new.env(); bookdown::render_book('index.rmd', envir = env_t2)
 file.exists(draft_t1_pdf) & file.exists(draft_t2_pdf)
 ```
 11. Cleanup
