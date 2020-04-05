@@ -17,26 +17,12 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker build -t $REPO . ; fi
 
 # push our custom docker container to docker hub, env vars stored on travis-ci.org
-# don't forget to set these at https://travis-ci.org/.../...settings
+# don't forget to set these at https://travis-ci.org/github/$GITHUB_USER/stormdown/...settings
 after_success:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker login  -u $DOCKER_USER -p $DOCKER_PASS ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export REPO=$DOCKER_USER/huskydown ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker login -u $DOCKER_USER -p $DOCKER_TOKEN ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export REPO=$GITHUB_USER/stormdown ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`  ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker build -f Dockerfile -t $REPO:$COMMIT . ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker tag $REPO:$COMMIT $REPO:$TAG ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker push $REPO ; fi
-
-deploy:
-  provider: releases
-  api_key: "$GITHUB_TOKEN"
-  file: "index/_book/thesis.pdf"
-  skip_cleanup: true
-  overwrite: true
-  on:
-    condition: $TRAVIS_OS_NAME = osx
-
-
-
-
-
