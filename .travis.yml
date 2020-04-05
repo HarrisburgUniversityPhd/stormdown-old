@@ -9,14 +9,12 @@ matrix:
 
 env:
  global:
-  - REPO=$DOCKER_USER/huskydown
+  - REPO=$DOCKER_USER/stormdown
 
 warnings_are_errors:  false
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker build -t $REPO . ; fi
-
-
 
 # push our custom docker container to docker hub, env vars stored on travis-ci.org
 # don't forget to set these at https://travis-ci.org/.../...settings

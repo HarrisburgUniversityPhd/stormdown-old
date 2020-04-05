@@ -33,46 +33,52 @@ rstudioapi::restartSession()
 ```
 05. Switch to the package folder.
     The cloned location can be anything you want.
-	I used `D:/repos/stormdown` so you may need to change the path in some of the following steps.
+	I used `D:/repos` so you may need to change the path in some of the following steps.
 ```{r}
-package_dir = 'D:/repos/stormdown'
-setwd(package_dir)
+setwd('D:/repos')
 ```
-06. Clean then compile the package
+06. Clean then compile the `stormdown` package
 ```{r}
-unlink(c("./docs/*", "./man/*", "./NAMESPACE"), recursive = T)
-devtools::document()
-pkgdown::build_site()
-devtools::check()
+package <- 'stormdown'
+package_path <- paste0('./', package)
+unlink(paste0(package_path, c('/docs', '/man', '/NAMESPACE')), recursive = T)
+devtools::document(package_path)
+pkgdown::build_site(package_path)
+devtools::check(package_path)
 ```
-07. (re)Install the templates
+07. (re)Install the package
 ```{r}
 lib <- library()
-if('stormdown' %in% lib$results[,'Package']) { remove.packages('stormdown') }
-devtools::install_local(package_dir, dep = T, upgrade = 'never')
+if(package %in% lib$results[,'Package']) { remove.packages(package) }
+devtools::install(package_path, dep = T, upgrade = 'never')
 rstudioapi::restartSession()
 ```
-08. Move to a drafting directory
+08. Create drafting directories
 ```{r}
-if (dir.exists('draft')) unlink('draft', recursive = T)
-dir.create('draft')
+working_dir <- getwd()
+draft_dir <- paste0(working_dir, '/draft')
+draft_t1_dir <- paste0(draft_dir, '/t1')
+draft_t2_dir <- paste0(draft_dir, '/t2')
+draft_t1_pdf <- paste0(draft_t1_dir, '/_book/dissertation.pdf')
+draft_t2_pdf <- paste0(draft_t2_dir, '/_book/dissertationportfolio.pdf')
+if (dir.exists(draft_dir)) unlink(draft_dir, recursive = T)
+dir.create(draft_dir)
 ```
-09. Generate and compile the Dissertation template
+09. Generate the templates
 ```{r}
-setwd(package_dir)
-rmarkdown::draft('draft/t1', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
-setwd(paste0(package_dir, '/draft/t1'))
-bookdown::render_book('index.rmd')
+rmarkdown::draft(draft_t1_dir, template = 'dissertation', package = package, create_dir = T, edit = F)
+rmarkdown::draft(draft_t2_dir, template = 'dissertationportfolio', package = package, create_dir = T, edit = F)
 ```
-10. Generate and compile the Dissertation Portfolio template
+10. Compile the templates
 ```{r}
-setwd(package_dir)
-rmarkdown::draft('draft/t2', template = 'dissertationportfolio', package = 'stormdown', create_dir = T, edit = F)
-setwd(paste0(package_dir, '/draft/t2'))
-bookdown::render_book('index.rmd')
+setwd(draft_t1_dir); bookdown::render_book('index.rmd')
+setwd(draft_t2_dir); bookdown::render_book('index.rmd')
+file.exists(draft_t1_pdf) & file.exists(draft_t2_pdf)
 ```
 11. Cleanup
 ```{r}
+setwd(working_dir)
+unlink(draft_dir, recursive = T)
 rm(list=ls())
 rstudioapi::restartSession()
 ```
