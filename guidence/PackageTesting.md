@@ -7,7 +7,6 @@ If you are a **user**, the standard [instalation procedure](./README.md) is what
 
 01. Setup the prerequisites.
     I recomend using [Chocolatey](https://chocolatey.org/install).
-    * [7-zip](https://www.7-zip.org/)
     * [R](https://cran.r-project.org/bin/windows/base/) + [R Studio](https://www.rstudio.com/products/rstudio/download/)
     * [RTools](https://cran.r-project.org/bin/windows/Rtools/)
     * [Pandoc](https://pandoc.org)
@@ -15,7 +14,6 @@ If you are a **user**, the standard [instalation procedure](./README.md) is what
 if('Unrestricted' -ne (Get-ExecutionPolicy)) { Set-ExecutionPolicy Bypass -Scope Process -Force }
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 refreshenv
-choco install 7zip.install -y
 choco install r.project -y
 refreshenv
 choco install r.studio -y

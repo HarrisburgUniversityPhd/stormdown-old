@@ -18,41 +18,9 @@ At the same time, composition and formatting can be done using lightweight [mark
 
 ## Using `stormdown` to write your PhD dissertation
 
-### Initial setup
-
-Using `stormdown` has some prerequisites, such as Pandoc, LaTeX and some fonts.
-To compile PDF documents using **R**, you need to have Pandoc, LaTeX and several related packages installed.
-If you have a recent version of  [RStudio](http://www.rstudio.com/products/rstudio/download/), then you already have Pandoc and don't need to do anything more about that. 
-
-Next is LaTeX.
-By far the easiest way to install LaTeX on any platform is with the [`tinytex`](https://yihui.name/tinytex/) package:
-
-```{r}
-install.packages(c('tinytex', 'rmarkdown'))
-tinytex::install_tinytex()
-# after restarting RStudio, confirm that you have LaTeX with 
-tinytex:::is_tinytex()
-```
-
-### Starting to write your dissertation
-
-To use **stormdown** from [RStudio](http://www.rstudio.com/products/rstudio/download/):
-
-1. Ensure that you have already installed LaTeX and the fonts described above, and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/).
-   You can use **stormdown** without RStudio.
-   For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)).
-   But RStudio is probably the easiest tool for writing both R code and text in your dissertation. 
-2. Install **stormdown** packages: 
-   ```{r}
-   if (!require("devtools")) install.packages("devtools")
-   devtools::install_github("markanewman/stormdown")
-   ```
-3. Use the **New R Markdown** dialog to select **HU Dissertation**:
-   1. File -> New File -> R Markdown -> 'From template' -> 'HU-Dissertation, and give your dissertation a **Name**.
-   2. Or if you're not using RStudio, run this line in your R console to create a new PhD dissertation from the template:
-      ```{r}
-      rmarkdown::draft('myhu_dissertation', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
-      ```
+Instructions on how to get started with `stormdown` can be found [here](./guidence/GettingStarted.md).
+This covers everything you should need to get started on new PC.
+Feel free sto skip steps you don't need (like installing R).
 
 ## Day-to-day Research
 
