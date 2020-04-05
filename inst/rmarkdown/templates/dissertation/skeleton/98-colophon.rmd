@@ -5,7 +5,7 @@ editor_options:
 
 # Colophon {-}
 
-This document is set in [EB Garamond](https://tug.org/FontCatalogue/ebgaramond), [Lato](https://tug.org/FontCatalogue/lato), [Source Code Pro](https://tug.org/FontCatalogue/sourcecodepro).
+This document is set in [EB Garamond](https://www.ctan.org/tex-archive/fonts/ebgaramond), [Lato](https://www.ctan.org/tex-archive/fonts/lato), [Source Code Pro](https://www.ctan.org/tex-archive/fonts/sourcecodepro).
 The body text is set at 11pt with $\familydefault$. 
 
 It was written in R Markdown and $\LaTeX$, and rendered into PDF using [stormdown](https://github.com/markanewman/stormdown) and [bookdown](https://github.com/rstudio/bookdown). 
