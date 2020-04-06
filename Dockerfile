@@ -11,9 +11,9 @@ COPY . /stormdown
 RUN sudo apt-get update && sudo apt-get install wget
 
 # get the 3 fonts we use
-RUN sudo wget http://mirrors.ctan.org/fonts/ebgaramond.zip && sudo unzip -q ebgaramond.zip
-RUN sudo wget http://mirrors.ctan.org/fonts/lato.zip && sudo unzip -q lato.zip
-RUN sudo wget http://mirrors.ctan.org/fonts/sourcecodepro.zip && sudo unzip -q sourcecodepro.zip
+RUN sudo wget -q http://mirrors.ctan.org/fonts/ebgaramond.zip && sudo unzip -q ebgaramond.zip
+RUN sudo wget -q http://mirrors.ctan.org/fonts/lato.zip && sudo unzip -q lato.zip
+RUN sudo wget -q http://mirrors.ctan.org/fonts/sourcecodepro.zip && sudo unzip -q sourcecodepro.zip
 
 # install the fonts
 RUN cp ebgaramond/opentype/*.otf -r /usr/local/share/fonts

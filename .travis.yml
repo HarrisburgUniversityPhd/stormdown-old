@@ -1,5 +1,5 @@
 # test out our code using docker
-# deploy: tag_name: xxx needs to be kept in sync manualy with the ./DESCRIPTION:Version:xxx field
+# env:global:TAG=xxx needs to be kept in sync manualy with the ./DESCRIPTION:Version:xxx field
 
 matrix:
   include:
@@ -10,15 +10,28 @@ matrix:
 
 warnings_are_errors:  false
 
+env:
+  global:
+   - REPO=markanewman/stormdown
+   - TAG=0.0.2
+
 before_install:
   - docker build .
+
+after_success:
+  - export REPO=$REPO
+  - export TAG=$TAG
 
 deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
-  tag_name: "0.0.2"
+  tag_name: $TAG
   file:
     - "/draft/t1/_book/dissertation.pdf"
     - "/draft/t2/_book/dissertationportfolio.pdf"
   skip_cleanup: true
   overwrite: true
+  on:
+    tags: true
+    repo: $REPO
+    branch: master
