@@ -17,10 +17,14 @@ env:
     REPO: $GITHUB_USER/$PACKAGE
     TAG: "0.0.2"
 
-before_install:
+before_script:
   - docker images
+
+script:  
   - docker build -t $REPO:$TAG .
   - docker run --name $PACKAGE $REPO:$TAG
+
+before_deploy:
   - docker cp $PACKAGE:/draft/t1/_book/dissertation.pdf dissertation.pdf
   - docker cp $PACKAGE:/draft/t2/_book/dissertationportfolio.pdf dissertationportfolio.pdf
 
