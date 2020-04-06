@@ -22,12 +22,8 @@ choco install r.studio -y
 choco install rtools -y
 choco install pandoc -y
 ```
-02. Install the three needed fonts:
-    * [EB Garamond](https://www.ctan.org/tex-archive/fonts/ebgaramond)
-    * [Lato](https://www.ctan.org/tex-archive/fonts/lato)
-    * [Source Code Pro](https://tug.org/FontCatalogue/sourcecodepro)
-03. Open up [R Studio][rstudio](https://www.rstudio.com/)
-04. Install LaTeX.
+02. Open up [R Studio][rstudio](https://www.rstudio.com/)
+03. Install LaTeX.
     By far the easiest way to install LaTeX on any platform is with the [`tinytex`](https://yihui.name/tinytex/) package:
 ```{r}
 install.packages(c('tinytex', 'rmarkdown'))
@@ -35,13 +31,13 @@ tinytex::install_tinytex()
 # after restarting RStudio, confirm that you have LaTeX with 
 tinytex:::is_tinytex()
 ```
-05. Install `stormdown`
+04. Install `stormdown`
 ```{r}
 if (!require('devtools')) install.packages('devtools')
 devtools::install_github('markanewman/stormdown')
 ```
-06. Create your files.
+05. Create your files.
 ```{r}
 rmarkdown::draft('myhu_dissertation', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
 ```
-07. Enjoy.
+06. Enjoy.

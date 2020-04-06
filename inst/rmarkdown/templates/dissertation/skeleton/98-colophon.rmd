@@ -5,10 +5,7 @@ editor_options:
 
 # Colophon {-}
 
-This document is set in [EB Garamond](https://www.ctan.org/tex-archive/fonts/ebgaramond), [Lato](https://www.ctan.org/tex-archive/fonts/lato), [Source Code Pro](https://www.ctan.org/tex-archive/fonts/sourcecodepro).
-The body text is set at 11pt with $\familydefault$. 
-
-It was written in R Markdown and $\LaTeX$, and rendered into PDF using [stormdown](https://github.com/markanewman/stormdown) and [bookdown](https://github.com/rstudio/bookdown). 
+This document is written in R Markdown and $\LaTeX$, and rendered into PDF using [stormdown](https://github.com/markanewman/stormdown) and [bookdown](https://github.com/rstudio/bookdown). 
 
 This document was typeset using the XeTeX typesetting system and the [Harrisburg University Doctoral Studies class](https://harrisburgu.edu/andp-program-main/andp-core-req/) class created by [Rand Ford](https://harrisburgu.edu/andp-program-main/andp-fulltime-faculty/).
 Under the hood, the [Harrisburg University LaTeX template](https://github.com/markanewman/stormdown) is used to ensure that documents conform precisely to submission standards.

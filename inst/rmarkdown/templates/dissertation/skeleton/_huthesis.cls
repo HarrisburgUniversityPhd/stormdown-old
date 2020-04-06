@@ -857,12 +857,6 @@
  \usepackage{ragged2e}
 
 \RequirePackage{mathspec}
-\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
-\setmathrm{EB Garamond}
 
 \defaultfontfeatures{Mapping=tex-text}
-\newfontfamily{\smallcaps}[RawFeature={c2sc,scmp}]{EB Garamond}
 \defaultfontfeatures{Ligatures=TeX}
-\setmainfont[Numbers=OldStyle, Ligatures={Common}]{EB Garamond}
-\setsansfont[Scale=MatchLowercase, BoldFont={Lato Bold}]{Lato Regular}
-\setmonofont[Scale=MatchLowercase]{Source Code Pro}
