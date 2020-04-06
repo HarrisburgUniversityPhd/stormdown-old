@@ -1,4 +1,6 @@
 package <- 'stormdown'
+package_path <- paste0('./', package)
+devtools::install(package_path, dep = T, upgrade = 'never')
 working_dir <- getwd()
 draft_dir <- paste0(working_dir, '/draft')
 draft_t1_dir <- paste0(draft_dir, '/t1')

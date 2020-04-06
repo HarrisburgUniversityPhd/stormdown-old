@@ -10,17 +10,32 @@ matrix:
 
 warnings_are_errors:  false
 
-before_install:
-  - docker build .
+env:
+  global:
+    GITHUB_USER: markanewman
+    PACKAGE: stormdown
+    REPO: $GITHUB_USER/$PACKAGE
+    TAG: "0.0.2"
 
+before_install:
+  - docker images
+  - docker build -t $REPO:$TAG .
+  - docker run --name $PACKAGE $REPO:$TAG
+  - docker cp $PACKAGE:/draft/t1/_book/dissertation.pdf dissertation.pdf
+  - docker cp $PACKAGE:/draft/t2/_book/dissertationportfolio.pdf dissertationportfolio.pdf
+
+# only deploy when a new release was created
+# https://github.com/{user}/{repo}/releases -> draft new release -> publish release
 deploy:
   provider: releases
   api_key: "$GITHUB_TOKEN"
+  body: $TRAVIS_TAG
   file:
-    - "/draft/t1/_book/dissertation.pdf"
-    - "/draft/t2/_book/dissertationportfolio.pdf"
+    - "dissertation.pdf"
+    - "dissertationportfolio.pdf"
   skip_cleanup: true
   overwrite: true
   on:
-    tags: true
+    repo: $REPO
     branch: master
+    tags: true

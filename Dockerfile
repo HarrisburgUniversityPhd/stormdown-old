@@ -22,5 +22,4 @@ RUN cp sourcecodepro/fonts/*.otf -r /usr/local/share/fonts
 RUN sudo fc-cache -f -v
 
 # install and test our package
-RUN R -e "devtools::install('/stormdown', dep = T, upgrade = 'never')"
-RUN R -f "/stormdown/guidence/cicd.R"
+CMD ["R", "-f", "./stormdown/guidence/cicd.R"]
