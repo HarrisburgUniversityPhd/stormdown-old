@@ -1,4 +1,5 @@
 # test out our code using docker
+# deploy: tag_name: xxx needs to be kept in sync manualy with the ./DESCRIPTION:Version:xxx field
 
 matrix:
   include:
@@ -10,5 +11,14 @@ matrix:
 warnings_are_errors:  false
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then docker build . ; fi
+  - docker build .
 
+deploy:
+  provider: releases
+  api_key: "$GITHUB_TOKEN"
+  tag_name: "0.0.2"
+  file:
+    - "/draft/t1/_book/dissertation.pdf"
+    - "/draft/t2/_book/dissertationportfolio.pdf"
+  skip_cleanup: true
+  overwrite: true
