@@ -6,9 +6,8 @@ If it does not, add an issue to the backlog or submit a PR.
 If you have been using your PC for a while, chances are that most of the work is already done.
 Feel free to skip steps you don't need (like installing R).
 
-
 01. Setup the prerequisites.
-    I recomend using [Chocolatey](https://chocolatey.org/install).
+    I recomend using [Chocolatey](https://chocolatey.org/install), but you can use any method you like.
     * [R](https://cran.r-project.org/bin/windows/base/) + [R Studio](https://www.rstudio.com/products/rstudio/download/)
     * [RTools](https://cran.r-project.org/bin/windows/Rtools/)
     * [Pandoc](https://pandoc.org)
@@ -22,7 +21,7 @@ choco install r.studio -y
 choco install rtools -y
 choco install pandoc -y
 ```
-02. Open up [R Studio][rstudio](https://www.rstudio.com/)
+02. Open up [R Studio][rstudio]
 03. Install LaTeX.
     By far the easiest way to install LaTeX on any platform is with the [`tinytex`](https://yihui.name/tinytex/) package:
 ```{r}
@@ -31,18 +30,21 @@ tinytex::install_tinytex()
 # after restarting RStudio, confirm that you have LaTeX with 
 tinytex:::is_tinytex()
 ```
-04. Install `stormdown`
+04. Install `stormdown` then restart [R Studio][rstudio]
 ```{r}
 if (!require('devtools')) install.packages('devtools')
 devtools::install_github('markanewman/stormdown')
 ```
 05. Create your files.
     File -> New File -> R Markdown... then choose 'From template', then choose 'HU-Dissertation, and enter `index` as the **Name**.
-    Note that this will currently only **Knit** if you name the directory `index` at this step. 
-    ![](rstudio-path.png)
-    ![](new-template.png)
-    If you are not using RStudio, the below commandline should help.
+    Note that this will currently only **Knit** if you name the directory `index` at this step.
+    If you are not using [R Studio][rstudio], the below commandline should help.
+    ![](rstudio-path.jpg)
+    ![](new-template.jpg)    
 ```{r}
-rmarkdown::draft('myhu_dissertation', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
+#only if not running RStudio
+rmarkdown::draft('index', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
 ```
 06. Enjoy.
+
+[rstudio]: https://www.rstudio.com/
