@@ -1,6 +1,6 @@
 Package: stormdown
 Title: Updated RMarkdown templates using bookdown
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),

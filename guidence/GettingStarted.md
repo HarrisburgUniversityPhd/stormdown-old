@@ -37,6 +37,11 @@ if (!require('devtools')) install.packages('devtools')
 devtools::install_github('markanewman/stormdown')
 ```
 05. Create your files.
+    File -> New File -> R Markdown... then choose 'From template', then choose 'HU-Dissertation, and enter `index` as the **Name**.
+    Note that this will currently only **Knit** if you name the directory `index` at this step. 
+    ![](rstudio-path.png)
+    ![](new-template.png)
+    If you are not using RStudio, the below commandline should help.
 ```{r}
 rmarkdown::draft('myhu_dissertation', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
 ```
