@@ -39,28 +39,31 @@ devtools::install_github('markanewman/stormdown', upgrade = 'never')
 ```
 06. Restart [R Studio][rstudio] to refresh the template cache.
 07. Create your files.
-    File -> New File -> R Markdown... then choose 'From template', then choose 'HU-Dissertation, and enter `index` as the **Name**.
+    File -> New File -> R Markdown... then choose 'From template', then choose 'HU-Dissertation, and enter `index` as the **Name** (_see Figures 1-2 below_).
     Note that this will currently only **Knit** if you name the directory `index` at this step.
     Please note: both the folder and the entrypoint `rmd` file are called index.
     The file name must remain `index.rmd` but you may want to rename your directory to something more rememberable. 
-    ![](rstudio-path.jpg)
-    ![](new-template.jpg)
-    If you are not using [R Studio][rstudio], the below commandline should help. 
-```{r}
-#only if not running RStudio
-rmarkdown::draft('index', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
-```
+    * If you are not using [R Studio][rstudio], the below commandline should help. 
+      ```{r}
+      #only if not running RStudio
+      rmarkdown::draft('index', template = 'dissertation', package = 'stormdown', create_dir = T, edit = F)
+      ```
 08. Make sure your working directory is the same as the one you used to create the template.
-    Files Tab -> Go To Folder -> More -> Set As Working Directory
-![](working-dir.jpg)
-    If you are not using [R Studio][rstudio], the below commandline should help. 
-```{r}
-#only if not running RStudio
-setwd("index")
-```
+    Files Tab -> Go To Folder -> More -> Set As Working Directory (_see Figure 3 below_).
+    * If you are not using [R Studio][rstudio], the below commandline should help. 
+      ```{r}
+      #only if not running RStudio
+      setwd("index")
+      ```
 09. Knit the files.
     The first time you knit it will take a long time as the system automatically puls down all the LaTeX packages.
     Subsequent knits will be much faster.
 10. Enjoy.
+
+Figure 1: Path to new templates <br/>![](rstudio-path.jpg)
+
+Figure 2: Create new template <br/>![](new-template.jpg)
+
+Figure 3: Set working directory <br/>![](working-dir.jpg)
 
 [rstudio]: https://www.rstudio.com/
