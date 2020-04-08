@@ -15,7 +15,7 @@ acknowledgments: |
 dedication: |
   `r paste(readLines("_03-dedication.rmd"), collapse = '\n  ')`
 knit: 'bookdown::render_book'
-bibliography: references.bib
+bibliography: _references.bib
 link-citations: yes
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 url: 'https\://github.com/user/repo'

@@ -55,12 +55,16 @@ rstudioapi::restartSession()
 ```{r}
 working_dir <- getwd()
 draft_dir <- paste0(working_dir, '/draft')
-draft_t1_dir <- paste0(draft_dir, '/t1')
-draft_t2_dir <- paste0(draft_dir, '/t2')
-draft_t1_pdf <- paste0(draft_t1_dir, '/_book/dissertation.pdf')
-draft_t2_pdf <- paste0(draft_t2_dir, '/_book/dissertationportfolio.pdf')
 if (dir.exists(draft_dir)) unlink(draft_dir, recursive = T)
 dir.create(draft_dir)
+draft_t1_dir <- paste0(draft_dir, '/t1')
+draft_t2_dir <- paste0(draft_dir, '/t2')
+dir.create(draft_t1_dir)
+dir.create(draft_t2_dir)
+draft_t1_dir <- paste0(draft_t1_dir, '/index')
+draft_t2_dir <- paste0(draft_t2_dir, '/index')
+draft_t1_pdf <- paste0(draft_t1_dir, '/_book/dissertation.pdf')
+draft_t2_pdf <- paste0(draft_t2_dir, '/_book/dissertationportfolio.pdf')
 ```
 09. Generate the templates
 ```{r}
