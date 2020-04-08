@@ -1,3 +1,10 @@
+---
+output:
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+---
+
 Here is my abstract.
 
 Links like [this](https://github.com/markanewman/stormdown) work.
