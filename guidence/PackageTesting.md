@@ -68,7 +68,12 @@ for(i in 1:length(template_names))
 09. Generate the templates
 ```{r}
 for(i in 1:length(template_names))
-    rmarkdown::draft(paste0(draft_dir, '/t', i, '/index'), template = template_names[i], package = package, create_dir = T, edit = F)
+    rmarkdown::draft(
+        paste0(draft_dir, '/t', i, '/index'),
+        template = template_names[i],
+        package = package,
+        create_dir = T,
+        edit = F)
 ```
 10. Compile the templates.
     Make sure to use a new enviroment because this more closely resembles the end user clicking the knit button
