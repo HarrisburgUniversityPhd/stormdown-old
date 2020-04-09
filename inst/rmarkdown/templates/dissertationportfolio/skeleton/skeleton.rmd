@@ -22,6 +22,10 @@ url: 'https\://github.com/user/repo'
 github-repo: user/repo
 ---
 
+```{r include = FALSE}
+if(!require(knitr)) { install.packages("knitr"); library(knitr) }
+```
+
 <!--
 Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.
 Be careful with spacing in this header!
@@ -31,3 +35,7 @@ If you'd like to include a comment that won't be produced in your resulting file
 <!--
 Due to the way R Markdown processed `RMD` files, it is important that all files end with a single blank line
 -->
+
+```{r include = FALSE}
+knitr::knit_hooks$set(inline = function(x) { prettyNum(x, big.mark = ',') })
+```
