@@ -1,4 +1,4 @@
-stormdown::pdf_book: 
+stormdown::pdf_book_hu: 
     latex_engine: xelatex
     toc: true
     lot: true

@@ -8,3 +8,8 @@
 # pkgdown
 docs/
 draft/
+
+# intermediate knit
+**/skeleton/**/latex
+**/skeleton/**/figure-latex
+**/skeleton/**/*.pdf

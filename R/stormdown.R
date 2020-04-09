@@ -8,5 +8,5 @@
 #' @docType package
 #' @name stormdown
 #' @import bookdown
-#' @import kableExtra
+#' @import devtools
 NULL
