@@ -4,6 +4,7 @@
 * APA table headers
 * Cleanup namespace
 * Cleanup examples
+* Enforce use of latex_engine: xelatex
 
 # stormdown 0.0.4 - 0.0.6
 
