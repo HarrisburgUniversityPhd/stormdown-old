@@ -2,4 +2,3 @@
 
 export(pdf_book_hu)
 import(bookdown)
-import(devtools)

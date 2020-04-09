@@ -7,6 +7,4 @@
 #' 
 #' @docType package
 #' @name stormdown
-#' @import bookdown
-#' @import devtools
 NULL

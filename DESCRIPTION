@@ -1,6 +1,6 @@
 Package: stormdown
 Title: Updated RMarkdown templates using bookdown
-Version: 0.0.6
+Version: 0.0.7
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
@@ -14,8 +14,11 @@ Maintainer: Mark Newman <mark@trinetteandmark.com>
 Depends:
     R (>= 3.4.0),
 Imports:
-    bookdown,
+    bookdown
+Sugests:
     devtools,
+    dplyr,
+    ggpubr,
 	kableExtra
 License: MIT + file LICENSE
 URL: https://github.com/markanewman/stormdown

@@ -6,9 +6,10 @@ editor_options:
 ---
 
 ```{r include = FALSE}
-if(!require(knitr)) { install.packages("knitr"); library(knitr) }
 if(!require(dplyr)) { install.packages("dplyr"); library(dplyr) }
-if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
+if(!require(ggpubr)) { install.packages("ggpubr"); library(ggpubr) }
+if(!require(kableExtra)) { install.packages("kableExtra"); library(kableExtra) }
+if(!require(knitr)) { install.packages("knitr"); library(knitr) }
 ```
 
 ## Related Works {#c-related-works}
@@ -64,9 +65,11 @@ The example we show here does the following:
 - Using `flights2`, we determine the largest arrival delay for each of the carriers.
 
 ```{r a-max_delays}
-flights2 <- flights %>% 
+flights2 <-
+  flights %>% 
   select(carrier_name, arr_delay)
-max_delays <- flights2 %>% 
+max_delays <-
+  flights2 %>% 
   group_by(carrier_name) %>%
   summarize(max_arr_delay = max(arr_delay, na.rm = TRUE))
 ```
@@ -78,12 +81,14 @@ This again goes to show how nice reproducible documents can be!
 The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
 
 ```{r a-maxdelays, results="asis"}
-kable(max_delays, 
-      col.names = c("Airline", "Max Arrival Delay"),
-      caption = "Maximum Delays by Airline",
-      caption.short = "Max Delays by Airline",
-      longtable = TRUE,
-      booktabs = TRUE)
+max_delays %>%
+  kable(
+    col.names = c("Airline", "Max Arrival Delay"),
+    caption = "Maximum Delays by Airline",
+    caption.short = "Max Delays by Airline",
+    longtable = TRUE,
+    booktabs = TRUE) %>%
+  kable_styling()  
 ```
 
 The last two options make the table a little easier-to-read.
@@ -111,12 +116,14 @@ flights %>%
   geom_point()
 ```
 
-### Additional resources
+## Additional resources
 
-- _Markdown_ Cheatsheet - <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>
+* _Markdown_ Cheatsheet[^markdown]
+* _R Markdown_ Reference Guide[^rmarkdown]
+* Introduction to `dplyr`[^dplyr]
+* `ggpubr` Documentation[^ggpubr]
 
-- _R Markdown_ Reference Guide - <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
-
-- Introduction to `dplyr` - <https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html>
-
-- `ggplot2` Documentation - <http://docs.ggplot2.org/current/>
+[^markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[^rmarkdown]: https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+[^dplyr]: https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+[^ggpubr]: http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/

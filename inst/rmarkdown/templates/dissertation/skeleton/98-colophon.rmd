@@ -5,6 +5,10 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r include = FALSE}
+if(!require(devtools)) { install.packages("devtools"); library(devtools) }
+```
+
 # Colophon {-}
 
 This document is written in R Markdown and $\LaTeX$, and rendered into PDF using [stormdown](https://github.com/markanewman/stormdown) and [bookdown](https://github.com/rstudio/bookdown). 

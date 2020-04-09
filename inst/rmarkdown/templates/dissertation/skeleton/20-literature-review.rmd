@@ -11,9 +11,10 @@ This gives you a quick understanding of the requirments of the document as soon 
 -->
 
 ```{r include = FALSE}
-if(!require(knitr)) { install.packages("knitr"); library(knitr) }
 if(!require(dplyr)) { install.packages("dplyr"); library(dplyr) }
-if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
+if(!require(ggpubr)) { install.packages("ggpubr"); library(ggpubr) }
+if(!require(kableExtra)) { install.packages("kableExtra"); library(kableExtra) }
+if(!require(knitr)) { install.packages("knitr"); library(knitr) }
 ```
 
 # Literature Review {#literature-review}
@@ -27,6 +28,15 @@ Be careful with your spacing in _Markdown_ documents.
 While whitespace largely is ignored, it does at times give _Markdown_ signals as to how to proceed.
 As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.
 In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
+
+## Numbers
+
+<!-- Inline numbers kint _pretty_ -->
+
+```{r include = FALSE}
+big_num <- 1234567890
+```
+This is an inline number: `r big_num`
 
 ## Lists
 
@@ -163,9 +173,11 @@ The example we show here does the following:
 - Using `flights2`, we determine the largest arrival delay for each of the carriers.
 
 ```{r max_delays}
-flights2 <- flights %>% 
+flights2 <-
+  flights %>% 
   select(carrier_name, arr_delay)
-max_delays <- flights2 %>% 
+max_delays <-
+  flights2 %>% 
   group_by(carrier_name) %>%
   summarize(max_arr_delay = max(arr_delay, na.rm = TRUE))
 ```
@@ -177,12 +189,14 @@ This again goes to show how nice reproducible documents can be!
 The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
 
 ```{r maxdelays, results="asis"}
-kable(max_delays, 
-      col.names = c("Airline", "Max Arrival Delay"),
-      caption = "Maximum Delays by Airline",
-      caption.short = "Max Delays by Airline",
-      longtable = TRUE,
-      booktabs = TRUE)
+max_delays %>%
+  kable(
+    col.names = c("Airline", "Max Arrival Delay"),
+    caption = "Maximum Delays by Airline",
+    caption.short = "Max Delays by Airline",
+    longtable = TRUE,
+    booktabs = TRUE) %>%
+  kable_styling()  
 ```
 
 The last two options make the table a little easier-to-read.
@@ -212,10 +226,12 @@ flights %>%
 
 ## Additional resources
 
-- _Markdown_ Cheatsheet - <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>
+* _Markdown_ Cheatsheet[^markdown]
+* _R Markdown_ Reference Guide[^rmarkdown]
+* Introduction to `dplyr`[^dplyr]
+* `ggpubr` Documentation[^ggpubr]
 
-- _R Markdown_ Reference Guide - <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
-
-- Introduction to `dplyr` - <https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html>
-
-- `ggplot2` Documentation - <http://docs.ggplot2.org/current/>
+[^markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[^rmarkdown]: https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+[^dplyr]: https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+[^ggpubr]: http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/

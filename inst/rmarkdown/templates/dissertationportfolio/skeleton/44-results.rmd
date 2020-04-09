@@ -5,12 +5,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r include = FALSE}
-if(!require(devtools)) { install.packages("devtools"); library(devtools) }
-if(!require(dplyr)) { install.packages("dplyr"); library(dplyr) }
-if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
-```
-
 ## Results {#c-results}
 
 ### Footnotes and Endnotes

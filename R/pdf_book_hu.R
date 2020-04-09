@@ -36,9 +36,10 @@ pdf_book_hu <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...) {
 
   # Mostly copied from knitr::render_sweave
   base$knitr$opts_chunk$comment <- NA
+  options(knitr.table.format = "latex") 
 
   old_opt <- getOption("bookdown.post.latex")
-  options(bookdown.post.latex = fix_envs)
+  options(bookdown.post.latex = fix_envs)  
   on.exit(options(bookdown.post.late = old_opt))
 
   base

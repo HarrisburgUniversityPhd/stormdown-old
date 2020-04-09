@@ -4,9 +4,9 @@ editor_options:
 ---
 
 ```{r include = FALSE}
-if(!require(devtools)) { install.packages("devtools"); library(devtools) }
 if(!require(dplyr)) { install.packages("dplyr"); library(dplyr) }
-if(!require(ggplot2)) { install.packages("ggplot2"); library(ggplot2) }
+if(!require(ggpubr)) { install.packages("ggpubr"); library(ggpubr) }
+if(!require(knitr)) { install.packages("knitr"); library(knitr) }
 ```
 
 # Results {#results}
@@ -102,7 +102,8 @@ Note also the use of the `scale` parameter which is discussed on the next page.
 
 ```{r delaysboxplot, warnings=FALSE, messages=FALSE, fig.cap="Mean Delays by Airline", fig.width=6}
 flights <- read.csv("data/flights.csv")
-flights %>% group_by(carrier) %>%
+flights %>%
+  group_by(carrier) %>%
   summarize(mean_dep_delay = mean(dep_delay)) %>%
   ggplot(aes(x = carrier, y = mean_dep_delay)) +
   geom_bar(position = "identity", stat = "identity", fill = "red")

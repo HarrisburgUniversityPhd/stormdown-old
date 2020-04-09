@@ -17,6 +17,15 @@ While whitespace largely is ignored, it does at times give _Markdown_ signals as
 As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.
 In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
 
+## Numbers
+
+<!-- Inline numbers kint _pretty_ -->
+
+```{r include = FALSE}
+big_num <- 1234567890
+```
+This is an inline number: `r big_num`
+
 ## Lists
 
 It's easy to create a list.

@@ -1,3 +1,10 @@
+# stormdown 0.0.7
+
+* Inline numbers kint _pretty_
+* APA table headers
+* Cleanup namespace
+* Cleanup examples
+
 # stormdown 0.0.4 - 0.0.6
 
 * Updated guidence
