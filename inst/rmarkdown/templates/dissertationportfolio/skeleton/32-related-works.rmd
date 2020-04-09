@@ -12,6 +12,14 @@ editor_options:
 You can also embed plots.
 For example, here is a way to use the base **R** graphics package to produce a plot using the built-in `pressure` dataset:
 
+<!--
+you _can_ use the normal `plot` command, but it needs extra effort to:
+* style
+* appeer in the list of figures
+* be citable
+so the recomendation is to use `ggpubr`
+-->
+
 ```{r a-pressure, echo=FALSE, cache=TRUE}
 plot(pressure)
 ```

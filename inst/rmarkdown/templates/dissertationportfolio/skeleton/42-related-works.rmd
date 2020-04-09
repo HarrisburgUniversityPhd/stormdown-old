@@ -54,15 +54,14 @@ View(flights)
 While not required, it is highly recommended you use the `dplyr` package to manipulate and summarize your data set as needed.
 It uses a syntax that is easy to understand using chaining operations.
 Below I've created a few examples of using `dplyr` to get information about the Portland flights in 2014.
-You will also see the use of the `ggplot2` package, which produces beautiful, high-quality academic visuals.
+You will also see the use of the `ggpubr` package, which produces beautiful, high-quality academic visuals.
 
 \clearpage
 
 The example we show here does the following:
 
-- Selects only the `carrier_name` and `arr_delay` from the `flights` dataset and then assigns this subset to a new variable called `flights2`. 
-
-- Using `flights2`, we determine the largest arrival delay for each of the carriers.
+* Selects only the `carrier_name` and `arr_delay` from the `flights` dataset and then assigns this subset to a new variable called `flights2`. 
+* Using `flights2`, we determine the largest arrival delay for each of the carriers.
 
 ```{r a-max_delays}
 flights2 <-
@@ -77,10 +76,9 @@ max_delays <-
 A useful function in the `knitr` package for making nice tables in _R Markdown_ is called `kable`.
 It is much easier to use than manually entering values into a table by copying and pasting values into Excel or LaTeX.
 This again goes to show how nice reproducible documents can be!
-(Note the use of `results="asis"`, which will produce the table instead of the code to create the table.)
 The `caption.short` argument is used to include a shorter title to appear in the List of Tables.
 
-```{r a-maxdelays, results="asis"}
+```{r a-maxdelays}
 max_delays %>%
   kable(
     col.names = c("Airline", "Max Arrival Delay"),
@@ -108,12 +106,15 @@ flights %>%
 We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth.
 Lastly, we show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
 
-```{r a-march3plot, fig.height=3, fig.width=6}
+```{r march3plot, fig.height=3, fig.width=6, fig.cap="March 3rd arrival delays for flights departing from Portland"}
 flights %>% 
   filter(month == 3, day == 3) %>%
-  ggplot(aes(x = dep_time, 
-             y = arr_delay)) + 
-  geom_point()
+  ggscatter(
+    x = 'dep_time', 
+    y = 'arr_delay') %>%
+  ggpar(
+    xlab = 'Departure Time',
+    ylab = 'Arrival Delay')
 ```
 
 ## Additional resources

@@ -105,8 +105,15 @@ flights <- read.csv("data/flights.csv")
 flights %>%
   group_by(carrier) %>%
   summarize(mean_dep_delay = mean(dep_delay)) %>%
-  ggplot(aes(x = carrier, y = mean_dep_delay)) +
-  geom_bar(position = "identity", stat = "identity", fill = "red")
+  ggbarplot(
+    x = 'carrier',
+    y = 'mean_dep_delay',
+    color = 'carrier') %>%
+  ggpar(
+    xlab = 'Carrier',
+    ylab = 'Mean Delay',
+    legend = 'right',
+    legend.title = 'Carrier')
 ```
 
 Here is a reference to this image: Figure \@ref(fig:delaysboxplot).
