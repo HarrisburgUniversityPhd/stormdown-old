@@ -12,16 +12,6 @@
 
 \hyphenation{mar-gin-al-ia}
 
-%
-% ----- apply watermark to every page
-% ----- change 'stamp' to 'nostamp'
-%------ to omit watermark
-%
-\usepackage[nostamp]{draftwatermark}
-% % Use the following to make modification
-\SetWatermarkText{DRAFT}
-\SetWatermarkLightness{0.95}
-
 %% for the per mil symbol
 \usepackage[nointegrals]{wasysym}
 
@@ -42,37 +32,11 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 
+%% APA tables
+\usepackage{caption}
+\captionsetup[table]{textfont={it}, labelfont={bf}, singlelinecheck=false, labelsep=newline}
 
 \usepackage{graphicx}
-
-
-% Double spacing, if you want it.
-% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
-% \dsp
-
-% If the Grad. Division insists that the first paragraph of a section
-% be indented (like the others), then include this line:
-% \usepackage{indentfirst}
-
-%%%%%%%%%%%%%%%%%%
-% If you want to use "sections" to partition your thesis
-% un-comment the following:
-%
-% \counterwithout{section}{chapter}
-% \setsecnumdepth{subsubsection}
-% \def\sectionmark#1{\markboth{#1}{#1}}
-% \def\subsectionmark#1{\markboth{#1}{#1}}
-% \renewcommand{\thesection}{\arabic{section}}
-% \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-% \makeatletter
-% \let\l@subsection\l@section
-% \let\l@section\l@chapter
-% \makeatother
-%
-% \renewcommand{\thetable}{\arabic{table}}
-% \renewcommand{\thefigure}{\arabic{figure}}
-%
-%%%%%%%%%%%%%%%%%%
 
 
 %% Stuff from https://github.com/suchow/Dissertate
