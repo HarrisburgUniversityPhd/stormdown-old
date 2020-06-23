@@ -19,11 +19,11 @@ If you use a different collection, VMMV.
 if('Unrestricted' -ne (Get-ExecutionPolicy)) { Set-ExecutionPolicy Bypass -Scope Process -Force }
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 refreshenv
-choco install r.project -y
+choco install r.project --version=3.6.3 -y
 refreshenv
-choco install r.studio -y
-choco install rtools -y
-choco install pandoc -y
+choco install r.studio --version=1.2.5033 -y
+choco install rtools --version=3.5.0.4 -y
+choco install pandoc --version=2.9.2.1 -y
 ```
 02. Open up [R Studio][rstudio]
 03. Install LaTeX.
