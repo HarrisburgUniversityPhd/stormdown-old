@@ -36,9 +36,12 @@ tinytex::install_tinytex()
 ```{r}
 tinytex:::is_tinytex()
 ```
-05. Install the R packages: rmarkdown (2.1), bookdown (0.18), and kableExtra (1.1.0)
+05. Install the R packages: rmarkdown (2.3), bookdown (0.19), kableExtra (1.1.0), dplyr (1.0.0), and ggpubr (0.3.0).
+    Note: `kableExtra`, `dplyr`, and `ggpubr` are only used in the sample sections.
+    You only need them to test the inital Knit.
 ```{r}
-install.packages(c('rmarkdown', 'bookdown', 'kableExtra'))
+install.packages(c('rmarkdown', 'bookdown'))
+install.packages(c('kableExtra', 'dplyr', 'ggpubr'))
 ```
 06. Install `stormdown` then restart [R Studio][rstudio]
 ```{r}
