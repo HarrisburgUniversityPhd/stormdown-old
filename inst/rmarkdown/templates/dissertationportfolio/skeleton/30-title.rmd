@@ -1,8 +1,0 @@
----
-output:
-  pdf_document: default
-editor_options:
-  chunk_output_type: console
----
-
-# Scholary Work B {#b-title}
