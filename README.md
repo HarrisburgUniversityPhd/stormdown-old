@@ -18,6 +18,12 @@ Instructions on how to get started with `stormdown` can be found [here](./guiden
 This covers everything you should need to get started on new PC.
 Feel free to skip steps you don't need (like installing R).
 
+If you are experenced with R and want to jump in the deep end try this:
+
+```{r}
+devtools::install_github('markanewman/stormdown')
+```
+
 ## Day-to-day Research
 
 I deal with large analyses that take a long time to run.
