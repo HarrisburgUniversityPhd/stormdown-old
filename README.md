@@ -18,10 +18,11 @@ Instructions on how to get started with `stormdown` can be found [here](./guiden
 This covers everything you should need to get started on new PC.
 Feel free to skip steps you don't need (like installing R).
 
-If you are experenced with R and want to jump in the deep end try this:
+If you are experenced with R and want to jump in the deep end, run the below, then restart R Studio:
 
 ```{r}
-devtools::install_github('markanewman/stormdown')
+if(Sys.timezone() == 'unknown') { Sys.setenv(TZ = 'GMT') }
+devtools::install_github('markanewman/stormdown', upgrade = 'never')
 ```
 
 ## Day-to-day Research
