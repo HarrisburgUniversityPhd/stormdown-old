@@ -10,7 +10,7 @@ Description: Using the pagedown package, this package aims to encourage reproduc
     research using simple Markdown syntax while preserving a flexable analysis style.
 Maintainer: Mark Newman <mark@trinetteandmark.com>
 Depends:
-    R (>= 4.0.3),
+    R (>= 4.0),
 Imports:
     pagedown
 Sugests:

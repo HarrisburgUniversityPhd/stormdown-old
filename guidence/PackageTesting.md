@@ -23,8 +23,8 @@ choco install r.studio --version=1.2.5033 -y
 choco install rtools --version=3.5.0.4 -y
 ```
 02. Open up [R Studio][rstudio](https://www.rstudio.com/)
-03. Install the R packages: `rmarkdown` (2.3), `bookdown` (0.20), `tinytex` (0.24), `devtools` (2.3.0), `roxygen2` (7.1.0), `pkgdown` (1.5.1), `kableExtra` (1.1.0), `dplyr` (1.0.0), and `ggpubr` (0.3.0).
-    * `roxygen2` and `pkgdown` are only needed as part of the build process.
+03. Install the R packages: `rmarkdown` (2.3), `pagedown` (0.12), `tinytex` (0.24), `devtools` (2.3.0), `roxygen2` (7.1.0), `kableExtra` (1.1.0), `dplyr` (1.0.0), and `ggpubr` (0.3.0).
+    * `roxygen2` is only needed as part of the build process.
     * `kableExtra`, `rlang`, `dplyr`, and `ggpubr` are only used in the sample sections.
       You only need them to test the inital Knit.
     * In order to pin the version of the packages, set the repo to a snapshot version.
@@ -32,8 +32,8 @@ choco install rtools --version=3.5.0.4 -y
 r <- getOption('repos')
 r['CRAN'] <- 'https://mran.microsoft.com/snapshot/2020-06-24'
 options(repos = r)
-install.packages(c('rmarkdown', 'bookdown', 'tinytex'))
-install.packages(c('devtools', 'roxygen2', 'pkgdown'))
+install.packages(c('rmarkdown', 'pagedown', 'tinytex'))
+install.packages(c('devtools', 'roxygen2'))
 install.packages(c('kableExtra', 'dplyr', 'ggpubr'))
 rstudioapi::restartSession()
 ```
@@ -57,10 +57,10 @@ setwd('D:/repos/markanewman')
 ```{r}
 package <- 'stormdown'
 package_path <- paste0('./', package)
-unlink(paste0(package_path, c('/docs', '/man', '/NAMESPACE')), recursive = T)
+unlink(paste0(package_path, c('/man', '/NAMESPACE')), recursive = T)
 devtools::document(package_path)
-pkgdown::build_site(package_path)
 devtools::check(package_path)
+rstudioapi::restartSession()
 ```
 08. (re)Install the package
 ```{r}
@@ -73,33 +73,34 @@ rstudioapi::restartSession()
 ```{r}
 working_dir <- getwd()
 draft_dir <- paste0(working_dir, '/draft')
-if (dir.exists(draft_dir)) unlink(draft_dir, recursive = T)
+if (dir.exists(draft_dir)) {
+    unlink(draft_dir, recursive = T)}
 dir.create(draft_dir)
 template_names <- c('dissertation', 'dissertationportfolio')
-for(i in 1:length(template_names))
-    dir.create(paste0(draft_dir, '/t', i))
+for(i in 1:length(template_names)) {
+    dir.create(paste0(draft_dir, '/t', i))}
 ```
 10. Generate the templates
 ```{r}
-for(i in 1:length(template_names))
+for(i in 1:length(template_names)) {
     rmarkdown::draft(
-        paste0(draft_dir, '/t', i, '/index'),
+        paste0(draft_dir, '/t', i, '/', template_names[i]),
         template = template_names[i],
         package = package,
-        create_dir = T,
-        edit = F)
+        create_dir = F,
+        edit = F)}
 ```
 11. Compile the templates.
     Make sure to use a new enviroment because this more closely resembles the end user clicking the knit button
 ```{r}
 for(i in 1:length(template_names)) {
-    setwd(paste0(draft_dir, '/t', i, '/index'))
+    setwd(paste0(draft_dir, '/t', i))
     env_t <- new.env()
-    bookdown::render_book('index.rmd', envir = env_t)
+    rmarkdown::render(paste0(template_names[i], '.rmd'), envir = env_t)
 }
 exists <- T
-for(i in 1:length(template_names))
-    exists <- exists & file.exists(paste0(draft_dir, '/t', i, '/index/_book/', template_names[i],'.pdf'))
+for(i in 1:length(template_names)) {
+    exists <- exists & file.exists(paste0(draft_dir, '/t', i, '/', template_names[i], '.html'))}
 exists
 ```
 12. Review the PDFs
@@ -140,8 +141,8 @@ docker run --name my_stormdown stormdown:local
 ```
 07. Copy the generated PDFs out of the container
 ```{ps1}
-docker cp my_stormdown:/draft/t1/index/_book/dissertation.pdf dissertation.pdf
-docker cp my_stormdown:/draft/t2/index/_book/dissertationportfolio.pdf dissertationportfolio.pdf
+docker cp my_stormdown:/draft/t1/dissertation.html dissertation.html
+docker cp my_stormdown:/draft/t2/dissertationportfolio.html dissertationportfolio.html
 ```
 08. Review the PDFs
 09. Cleanup

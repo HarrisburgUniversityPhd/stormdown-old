@@ -25,8 +25,8 @@ script:
   - docker run --name $PACKAGE $REPO:$TAG
 
 before_deploy:
-  - docker cp $PACKAGE:/draft/t1/index/_book/dissertation.pdf dissertation.pdf
-  - docker cp $PACKAGE:/draft/t2/index/_book/dissertationportfolio.pdf dissertationportfolio.pdf
+  - docker cp $PACKAGE:/draft/t1/index/index.html dissertation.html
+  - docker cp $PACKAGE:/draft/t2/index/index.html dissertationportfolio.html
 
 # only deploy when a new release was created
 # https://github.com/{user}/{repo}/releases -> draft new release -> publish release
@@ -35,8 +35,8 @@ deploy:
   api_key: "$GITHUB_TOKEN"
   body: $TRAVIS_TAG
   file:
-    - "dissertation.pdf"
-    - "dissertationportfolio.pdf"
+    - "dissertation.html"
+    - "dissertationportfolio.html"
   skip_cleanup: true
   overwrite: true
   on:
