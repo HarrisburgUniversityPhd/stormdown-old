@@ -13,8 +13,7 @@ location: Harrisburg, PA
 dedication: A dedication line or two goes here.
 abstract: |
   Here is my abstract.
-  
-  
+
   Citations [@reedweb2007] are also posible.
   
   Same with $\TeX$.
@@ -458,7 +457,7 @@ $$
 By far the easiest way to present tables in your thesis is to store the contents of the table in a CSV or Excel file, then read that file in to your R Markdown document as a data frame.
 Then you can style the table with the `kable` function, or functions in the [kableExtra](https://cran.r-project.org/web/packages/kableExtra/index.html) package.
 **NOTE**: there is currently [a known issue](https://github.com/rstudio/pagedown/issues/191) with `kableExtra` and `pagedown`.
-Please be advised to not use the fancy formating options yet.
+Please be advised to not use the fancy formatting options yet.
 
 In addition to the tables that can be automatically generated from a data frame in **R** that you saw in [R Markdown Basics] using the `kable` function, you can also create tables using _pandoc_.
 (More information is available at <http://pandoc.org/README.html#tables>.)
@@ -662,7 +661,7 @@ be here if you have appendix pages
 otherwise you can remove it.-->
 <div id="refs"></div>
 
-# The First Appendix {-}
+# Appendix I {-}
 
 This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readability and/or setup.
 
@@ -676,7 +675,9 @@ This first appendix includes all of the R chunks of code that were hidden throug
 ```{r ref.label='include_packages_2', results='hide', echo = TRUE}
 ```
 
-# The Second Appendix, for Fun {-}
+# Appendix II {-}
+
+Just for fun.
 
 <!--
 Due to the way R Markdown processed `RMD` files, it is important that all files end with a single blank line
