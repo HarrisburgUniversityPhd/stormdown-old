@@ -10,3 +10,7 @@ docs/
 draft/
 
 # intermediate knit
+inst/**/skeleton_cache
+inst/**/skeleton_files
+inst/**/skeleton.html
+inst/**/packages.bib
