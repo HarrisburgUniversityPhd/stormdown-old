@@ -1,20 +1,18 @@
 Package: stormdown
-Title: Updated RMarkdown templates using bookdown
-Version: 0.0.7
+Title: PhD dissertation templates for Harrisburg University in R Markdown
+Version: 2.0.0
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
     person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"),
 	person("Mark", "Newman", email = "mark@trinetteandmark.com", role = c("aut", "cre")))
-Description: Using the bookdown package and LaTeX dissertation templates from
-    Harrisburg University, this package aims to encourage reproducible research using
-    simple Markdown syntax while preserving a flexable analysis style. Based on Ben
-	Marwick's huskydown.
+Description: Using the pagedown package, this package aims to encourage reproducible
+    research using simple Markdown syntax while preserving a flexable analysis style.
 Maintainer: Mark Newman <mark@trinetteandmark.com>
 Depends:
-    R (>= 3.4.0),
+    R (>= 4.0.3),
 Imports:
-    bookdown
+    pagedown
 Sugests:
     devtools,
     dplyr,

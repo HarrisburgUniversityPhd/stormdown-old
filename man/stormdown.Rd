@@ -5,7 +5,7 @@
 \alias{stormdown}
 \title{\code{stormdown} package:}
 \description{
-Updated RMarkdown templates using bookdown
+PhD dissertation templates for Harrisburg University in R Markdown
 }
 \details{
 See the README on

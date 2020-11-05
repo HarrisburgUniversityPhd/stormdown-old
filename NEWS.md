@@ -1,3 +1,7 @@
+# stormdown 2.0.0
+
+* Switch the base to [pagedown](https://github.com/rstudio/pagedown) for better cross platform compatability
+
 # stormdown 0.0.7
 
 * Inline numbers kint _pretty_

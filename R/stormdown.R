@@ -1,6 +1,6 @@
 #' \code{stormdown} package:
 #' 
-#' Updated RMarkdown templates using bookdown
+#' PhD dissertation templates for Harrisburg University in R Markdown
 #'
 #' See the README on
 #' \href{https://github.com/markanewman/stormdown}{GitHub}
