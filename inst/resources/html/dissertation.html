@@ -145,24 +145,19 @@ $endif$
 $if(subtitle)$
 <h1 class="subtitle"><span>$subtitle$</span></h1>
 $endif$
-$for(author)$
 <br><p class="titlep">by<p><br>
-$if(author.name)$
-<h2 class="author">$author.name$$if(author.edu)$, $author.edu$$endif$</h2>
+$if(author)$
+<h2 class="author">$author$</h2>
 $endif$
-$endfor$
+<br>
+<p class="titlep">A dissertation submitted to<br>$institute$<br>for the degree of<br>$degree$</p>
+<br>
+<img src="figure/hu-100px.png"/>
+<br>
+<p class="department">Department of $department$<br>$institute$<br>$date.month$ $date.year$</p>
+$endif$
 </div>
-<br>
-<p class="department">Department of $department$</p>
-<br>
-<p class="titlep">Submitted in partial fulfillment of <br> the requirements for the degree of</p>
-<br>
-<h2 class="degree">$degree$</h2>
-<br>
-<p class="institute">Faculty of $faculty$, $institute$<br>$location$</p>
-<br>
-<p class="copyright">&#169; $for(date)$$date.year$$endfor$ $for(author)$$author.name$$endfor$</p>
-$endif$
+
 
 <!--
 Bellow is the signature page
