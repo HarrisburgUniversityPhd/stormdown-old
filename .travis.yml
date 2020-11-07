@@ -15,7 +15,7 @@ env:
     GITHUB_USER: markanewman
     PACKAGE: stormdown
     REPO: $GITHUB_USER/$PACKAGE
-    TAG: "2.0.1"
+    TAG: "2.0.2"
 
 before_script:
   - docker images
@@ -25,8 +25,7 @@ script:
   - docker run --name $PACKAGE $REPO:$TAG
 
 before_deploy:
-  - docker cp $PACKAGE:/draft/t1/index/index.html dissertation.html
-  - docker cp $PACKAGE:/draft/t2/index/index.html dissertationportfolio.html
+  - docker cp $PACKAGE:/draft/t1/dissertation.html dissertation.html
 
 # only deploy when a new release was created
 # https://github.com/{user}/{repo}/releases -> draft new release -> publish release
@@ -36,7 +35,6 @@ deploy:
   body: $TRAVIS_TAG
   file:
     - "dissertation.html"
-    - "dissertationportfolio.html"
   skip_cleanup: true
   overwrite: true
   on:

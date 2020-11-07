@@ -103,7 +103,7 @@ for(i in 1:length(template_names)) {
     exists <- exists & file.exists(paste0(draft_dir, '/t', i, '/', template_names[i], '.html'))}
 exists
 ```
-12. Review the PDFs
+12. Review the files
 13. Cleanup
 ```{r}
 setwd(working_dir)
@@ -142,7 +142,6 @@ docker run --name my_stormdown stormdown:local
 07. Copy the generated PDFs out of the container
 ```{ps1}
 docker cp my_stormdown:/draft/t1/dissertation.html dissertation.html
-docker cp my_stormdown:/draft/t2/dissertationportfolio.html dissertationportfolio.html
 ```
 08. Review the PDFs
 09. Cleanup

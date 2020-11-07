@@ -132,9 +132,7 @@ $for(include-before)$
 $include-before$
 $endfor$
 
-<!--
-Title Page
--->
+<!-- Title Page -->
 <div class="front-page">
 $if(title)$
 <div id="$idprefix$header" class="title-page">
@@ -152,12 +150,34 @@ $endif$
 <br>
 <p class="titlep">A dissertation submitted to<br>$institute$<br>for the degree of<br>$degree$</p>
 <br>
-<img src="figure/hu-100px.png"/>
+<img src="figure/cover-logo.jpg"/>
 <br>
 <p class="department">Department of $department$<br>$institute$<br>$date.month$ $date.year$</p>
 $endif$
 </div>
 
+<!-- Copyright Page -->
+<div data-break-before="page">
+  <p class="titlep">&#169; Copyright by $author$, $date.year$<br>All Rights Reserved</p>
+</div>
+
+<!-- abstract -->
+
+$if(abstract)$
+<div class="abstract">
+<h1 class="abstract">$if(abstract-title)$$abstract-title$$else$Abstract$endif$</h1>
+$abstract$
+</div>
+$endif$
+
+<!-- dedication -->
+
+$if(dedication)$
+<div class="dedication">
+<h1 class="dedication">$if(dedication-title)$$dedication-title$$else$Dedication$endif$</h1>
+<p class="dedication">$dedication$</p>
+</div>
+$endif$
 
 <!--
 Bellow is the signature page
@@ -196,32 +216,6 @@ $endif$
 </div>
 $endif$
 
-<!-- Pre content section
--Example, if user want a dedication page then they include "dedication: 'some text' in the YAML"
--If you want other pages not found in this template simply add it to this section in the same way
-using the "$if(your_new_option)$ <your content> $endif$"
--->
-$if(dedication)$
-<div class="dedication">
-<h1 class="dedication">$if(dedication-title)$$dedication-title$$else$Dedication$endif$</h1>
-<p class="dedication">$dedication$</p>
-</div>
-$endif$
-
-
-$if(abstract)$
-<div class="abstract">
-<h1 class="abstract">$if(abstract-title)$$abstract-title$$else$Abstract$endif$</h1>
-$abstract$
-</div>
-$endif$
-
-$if(preface)$
-<div class="preface">
-<h1 class="preface">$if(preface-title)$$preface-title$$else$Preface$endif$</h1>
-$preface$
-</div>
-$endif$
 
 $if(acknowledge)$
 <div class="acknowledge">

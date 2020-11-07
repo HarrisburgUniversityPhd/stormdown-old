@@ -7,10 +7,7 @@ date:
   year: "`r format(Sys.Date(), '%Y')`"
 degree: DOCTOR OF PHILOSOPHY
 institute: Harrisburg University of Science and Technology
-faculty: Analytics
 department: Analytics
-location: Harrisburg, PA
-dedication: A dedication line or two goes here.
 abstract: |
   Here is my abstract.
   Citations [@reedweb2007] are also posible.
@@ -18,8 +15,8 @@ abstract: |
   Same with $\TeX$.
   Links like [this](https://github.com/markanewman/stormdown) work.
   Same with this kind: <https://github.com/markanewman/stormdown>.
-preface: |
-  "r paste(readLines('preface.rmd'), collapse = '\n')"
+dedication: |
+  "r paste(readLines('dedication.rmd'), collapse = '\n')"
   
   By replaceing the above line's double quote (") with a back quote
   (`), you can redirect the section to an external file.
