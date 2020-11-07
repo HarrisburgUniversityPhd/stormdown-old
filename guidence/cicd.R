@@ -6,7 +6,7 @@ draft_dir <- paste0(working_dir, '/draft')
 if (dir.exists(draft_dir)) {
     unlink(draft_dir, recursive = T)}
 dir.create(draft_dir)
-template_names <- c('dissertation', 'dissertationportfolio')
+template_names <- c('dissertation')
 for(i in 1:length(template_names)) {
     dir.create(paste0(draft_dir, '/t', i))}
 for(i in 1:length(template_names)) {

@@ -5,7 +5,7 @@
 \alias{stormdown}
 \title{\code{stormdown} package:}
 \description{
-PhD dissertation templates for Harrisburg University in R Markdown
+PhD dissertation template for Harrisburg University in R Markdown
 }
 \details{
 See the README on
