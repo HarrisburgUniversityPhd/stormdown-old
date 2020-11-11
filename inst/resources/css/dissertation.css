@@ -194,8 +194,12 @@ h2.author {
   font-size: 13pt;
   font-weight: normal;
 }
-.dedication, .abstract, .acknowledge {
+.dedication, .abstract, .acknowledge, .signpage, .acceptpage {
   text-align: left;
+  line-height: 100%;
+}
+h1.dedication, h1.abstract, h1.acknowledge, h1.signpage, h1.acceptpage {
+  text-align: center;
   line-height: 100%;
 }
 p.abstract {

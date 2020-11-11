@@ -15,7 +15,7 @@ env:
     GITHUB_USER: markanewman
     PACKAGE: stormdown
     REPO: $GITHUB_USER/$PACKAGE
-    TAG: "2.0.3"
+    TAG: "2.0.4"
 
 before_script:
   - docker images

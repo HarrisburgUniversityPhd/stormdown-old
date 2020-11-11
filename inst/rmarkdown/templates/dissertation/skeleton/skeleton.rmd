@@ -20,7 +20,8 @@ dedication: |
   
   By replaceing the above line's double quote (") with a back quote
   (`), you can redirect the section to an external file.
-acknowledge: Put the ackknowledgements here.
+acknowledge: |
+  Put the ackknowledgements here.
 committee:
   - name: Jane Doe III
     title: Ph.D
