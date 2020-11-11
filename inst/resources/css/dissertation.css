@@ -153,13 +153,17 @@ div.dedication {
 div.abstract {
   break-before: page;
 }
-div.preface {
+div.copyright {
   break-before: page;
 }
 div.acknowledge {
   break-before: page;
 }
 div.signpage {
+  break-before: page;
+  counter-reset: page;
+}
+div.acceptpage {
   break-before: page;
   counter-reset: page;
 }
@@ -190,20 +194,15 @@ h2.author {
   font-size: 13pt;
   font-weight: normal;
 }
-.dedication,.abstract, .preface, .acknowledge {
+.dedication, .abstract, .acknowledge {
   text-align: left;
   line-height: 100%;
-}
-div.dedication > p {
-  text-align: center;
-  font-style: italic;
-  padding-top: 1in;
 }
 p.abstract {
   line-height: 200%;
 }
 body {
-  font-family: "Trebuchet MS";
+  font-family: "Constantia";
   font-size: 11pt;
   line-height: 200%;
 }

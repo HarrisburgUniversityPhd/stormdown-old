@@ -23,21 +23,31 @@ dedication: |
 acknowledge: Put the ackknowledgements here.
 committee:
   - name: Jane Doe III
-    prefix: Dr
-    position: Chair of Department
+    title: Ph.D
+    position: Chair
   - name: John Smith
-    prefix: Dr
-    position: Faculty Advisor
+    title: Ph.D
   - name: John Smith
-    prefix: Dr
-    position: Faculty Advisor
+    title: Ph.D
   - name: John Smith
-    prefix: Dr
-    position: Faculty Advisor
+    title: Ph.D
   - name: John Smith
-    prefix: Dr
-    position: Faculty Advisor
+    title: Ph.D
+acceptance:
+  - name: Jane Doe III
+    title: Ph.D
+    position: Chair, Graduate Committee
+    institute: Harrisburg University of Science and Technology
+  - name: Rand Ford
+    title: Ph.D
+    position: Chair, Department of Analytics
+    institute: Harrisburg University of Science and Technology
+  - name: Bilita Mattes
+    title: D.Ed
+    position: Provost
+    institute: Harrisburg University of Science and Technology
 sign_page: true
+accept_page: true
 lof: true
 lot: true
 paged-footnotes: true
@@ -701,21 +711,6 @@ Since that's obvious after a chapter or section title, proper typesetting doesn'
 
 How should all your stand alone works be viewed as a whole unique contribution.
 This should be a more than the sum of its parts excerise.
-
-# Colophon {-}
-
-This document is written in R Markdown and $\LaTeX$, and rendered into PDF using [`stormdown`](https://github.com/markanewman/stormdown) and `pagedown` [@R-pagedown]. 
-
-The source files for this dissertation, along with all the data files, have been organized with reproducibility in mind and which is available at https://github.com/user/repo.
-A hard copy of the dissertation can be found in the Harrisburg University of Science and Technology library.
-
-This version of the dissertation was generated on `r Sys.time()`.
-
-The computational environment that was used to generate this version is as follows:
-
-```{r echo = FALSE}
-devtools::session_info()
-```
 
 # References {-}
 

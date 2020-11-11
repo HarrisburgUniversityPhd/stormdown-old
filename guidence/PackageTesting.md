@@ -75,10 +75,10 @@ working_dir <- getwd()
 draft_dir <- paste0(working_dir, '/draft')
 if (dir.exists(draft_dir)) {
     unlink(draft_dir, recursive = T)}
-dir.create(draft_dir)
+dir.create(draft_dir, showWarnings = F)
 template_names <- c('dissertation')
 for(i in 1:length(template_names)) {
-    dir.create(paste0(draft_dir, '/t', i))}
+    dir.create(paste0(draft_dir, '/t', i), showWarnings = F)}
 ```
 10. Generate the templates
 ```{r}

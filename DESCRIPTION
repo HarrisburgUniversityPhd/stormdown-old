@@ -1,6 +1,6 @@
 Package: stormdown
 Title: PhD dissertation template for Harrisburg University in R Markdown
-Version: 2.0.2
+Version: 2.0.3
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),

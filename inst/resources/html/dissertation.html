@@ -157,12 +157,11 @@ $endif$
 </div>
 
 <!-- Copyright Page -->
-<div data-break-before="page">
-  <p class="titlep">&#169; Copyright by $author$, $date.year$<br>All Rights Reserved</p>
+<div class="copyright">
+  <p class="copyright">&#169; Copyright by $author$, $date.year$<br>All Rights Reserved</p>
 </div>
 
 <!-- abstract -->
-
 $if(abstract)$
 <div class="abstract">
 <h1 class="abstract">$if(abstract-title)$$abstract-title$$else$Abstract$endif$</h1>
@@ -171,51 +170,51 @@ $abstract$
 $endif$
 
 <!-- dedication -->
-
 $if(dedication)$
 <div class="dedication">
 <h1 class="dedication">$if(dedication-title)$$dedication-title$$else$Dedication$endif$</h1>
-<p class="dedication">$dedication$</p>
+$dedication$
 </div>
 $endif$
 
-<!--
-Bellow is the signature page
-if the user wants one the YAML
-should be "sign_page: true" -->
-
+<!-- signature -->
 $if(sign_page)$
 <div class="signpage">
-<p class="titlep">This thesis entitled</p>
-$if(title)$
-<div id="$idprefix$header" class="title-page">
-$if(shorttitle)$
-<br><br><h1 class="shorttitle1" style="display: none;">$shorttitle$</h1>
-$endif$
-<p></p>
-<h1 class="title">$title$</h1>
-$for(author)$
-<br><p class="titlep">by<p><br>
-$if(author.name)$
-<h2 class="author">$author.name$$if(author.edu)$, $author.edu$$endif$</h2><br>
-$endif$
-$endfor$
-</div>
-<p class="titlep">Submitted in partial fulfillment of <br> the requirements for the degree of</p>
-<br>
-<h2 class="degree">$degree$</h2>
-<br>
-<p class="titlep">And has been duly approved by</p>
-<br><br>
-$for(committee)$
-<div class="signature">$committee.position$, $committee.prefix$. $committee.name$</div>
-$endfor$
-
-<div class="signature">Date</div>
-$endif$
+  <h1 class="signpage">Ph.D. Committee Approval</h1>
+  <br>
+  <p>To the Faculty of $institute$:</p>
+  <p>The members of the Committee appointed to examine the dissertation of $author$ find it satisfactory and recommend that it be accepted.</p>
+  <br><br>
+  $for(committee)$
+  <div class="signature">$committee.name$, $committee.title$$if(committee.position)$, $committee.position$$endif$.</div>
+  $endfor$
 </div>
 $endif$
 
+<!-- acceptance -->
+$if(accept_page)$
+<div class="acceptpage">
+  <h1 class="acceptpage">Acceptance Page</h1>
+  <br>
+  <p>$institute$:</p>
+  <br><br>
+  <p>As chair of the candidate’s graduate committee, I have read the dissertation of $author$ in its final form and have found that:
+    (1) its format, citations, and bibliographical style are consistent and acceptable and fulfill university and department style requirements;
+    (2) its illustrative materials including figures, tables, and charts are in place;
+    and (3) the final manuscript is satisfactory to the graduate committee and is ready for submission to the university library.</p>
+    <br><br>
+    $for(acceptance)$
+    <div class="signature">
+      $acceptance.name$, $acceptance.title$
+      <br>
+      $acceptance.position$
+      <br>
+      $acceptance.institute$
+    </div>
+    $endfor$
+    </div>
+</div>
+$endif$
 
 $if(acknowledge)$
 <div class="acknowledge">
