@@ -1,6 +1,6 @@
 Package: stormdown
 Title: PhD dissertation template for Harrisburg University in R Markdown
-Version: 2.0.4
+Version: 2.0.5
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
@@ -10,7 +10,7 @@ Description: Using the pagedown package, this package aims to encourage reproduc
     research using simple Markdown syntax while preserving a flexable analysis style.
 Maintainer: Mark Newman <mark@trinetteandmark.com>
 Depends:
-    R (>= 4.0),
+    R (>= 3.2),
 Imports:
     pagedown
 Sugests:
